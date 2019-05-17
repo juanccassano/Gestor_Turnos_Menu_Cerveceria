@@ -28,5 +28,11 @@ namespace PresentacionWinForm
             FrmMesa ventanaM = new FrmMesa();
             ventanaM.ShowDialog();
         }
-    }
+
+		private void bebidaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FrmBebida ventanaB = new FrmBebida();
+			ventanaB.ShowDialog();
+		}
+	}
 }

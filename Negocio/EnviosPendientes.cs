@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dominio;
 using System.Data.SqlClient;
+using AccesoDatos;
 
 namespace Negocio
 {
@@ -21,7 +22,6 @@ namespace Negocio
             {
                 conexion.ConnectionString = "data source=DESKTOP-BKKOHQN\\SQLEXPRESS; initial catalog=CASSANO_DB; integrated security=sspi";
                 comando.CommandType = System.Data.CommandType.Text;
-                //   comando.CommandText = "select ID, IDPEDIDO, IDCLIENTE, PAGO From ENVIOS";
                 comando.CommandText = "select ID, IDPEDIDO, IDCLIENTE, PAGO From ENVIOS";
                 comando.Connection = conexion;
                 conexion.Open();

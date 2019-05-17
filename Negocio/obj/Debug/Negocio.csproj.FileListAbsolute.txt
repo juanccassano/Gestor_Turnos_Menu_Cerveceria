@@ -7,3 +7,5 @@ C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\Negocio\obj\Debug\Negocio
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\Negocio\obj\Debug\Negocio.dll
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\Negocio\bin\Debug\AccesoDatos.dll
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\Negocio\bin\Debug\AccesoDatos.pdb

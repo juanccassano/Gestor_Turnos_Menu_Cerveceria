@@ -16,3 +16,8 @@ C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\bin\D
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\bin\Debug\Dominio.pdb
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\bin\Debug\Negocio.pdb
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.csproj.CopyComplete
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmSalon.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAltaBebida.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmBebida.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\bin\Debug\AccesoDatos.dll
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\bin\Debug\AccesoDatos.pdb

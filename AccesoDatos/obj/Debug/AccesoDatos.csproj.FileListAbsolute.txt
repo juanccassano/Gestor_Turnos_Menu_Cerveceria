@@ -1,0 +1,6 @@
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\AccesoDatos\bin\Debug\AccesoDatos.dll
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\AccesoDatos\bin\Debug\AccesoDatos.pdb
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\AccesoDatos\obj\Debug\AccesoDatos.csprojAssemblyReference.cache
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\AccesoDatos\obj\Debug\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\AccesoDatos\obj\Debug\AccesoDatos.dll
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\AccesoDatos\obj\Debug\AccesoDatos.pdb
