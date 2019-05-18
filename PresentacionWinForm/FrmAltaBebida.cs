@@ -26,7 +26,31 @@ namespace PresentacionWinForm
 			bebidaLocal = bebida;
 		}
 
-		private void btnAceptar_Click(object sender, EventArgs e)
+
+		private void FrmAltaBebida_Load(object sender, EventArgs e)
+		{
+
+			try
+			{
+
+
+				if (bebidaLocal != null)
+				{
+					txtNombre.Text = bebidaLocal.Nombre;
+					txtMarca.Text = bebidaLocal.Marca;
+					ckbAlcoholica.Checked = bebidaLocal.ContieneAlcohol;
+					txtPrecioUnitario.Text = bebidaLocal.PrecioUnitario.ToString();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+
+		}
+
+
+		private void btnAceptar_Click_1(object sender, EventArgs e)
 		{
 			BebidaNegocio negocio = new BebidaNegocio();
 			try
@@ -59,29 +83,7 @@ namespace PresentacionWinForm
 			}
 		}
 
-		private void FrmAltaBebida_Load(object sender, EventArgs e)
-		{
-
-			try
-			{
-
-
-				if (bebidaLocal != null)
-				{
-					txtNombre.Text = bebidaLocal.Nombre;
-					txtMarca.Text = bebidaLocal.Marca;
-					ckbAlcoholica.Checked = bebidaLocal.ContieneAlcohol;
-					txtPrecioUnitario.Text = bebidaLocal.PrecioUnitario.ToString();
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.ToString());
-			}
-
-		}
-
-		private void btnCancelar_Click(object sender, EventArgs e)
+		private void btnCancelar_Click_1(object sender, EventArgs e)
 		{
 			this.Close();
 		}

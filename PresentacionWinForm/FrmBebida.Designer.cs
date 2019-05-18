@@ -54,6 +54,7 @@
 			this.btnAgregar.TabIndex = 1;
 			this.btnAgregar.Text = "Agregar";
 			this.btnAgregar.UseVisualStyleBackColor = true;
+			this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
 			// 
 			// btnModificar
 			// 
@@ -63,6 +64,7 @@
 			this.btnModificar.TabIndex = 2;
 			this.btnModificar.Text = "Modificar";
 			this.btnModificar.UseVisualStyleBackColor = true;
+			this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
 			// 
 			// btnBorrar
 			// 
@@ -84,6 +86,7 @@
 			this.Controls.Add(this.dgvBebida);
 			this.Name = "FrmBebida";
 			this.Text = "Bebidas";
+			this.Load += new System.EventHandler(this.FrmBebida_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvBebida)).EndInit();
 			this.ResumeLayout(false);
 

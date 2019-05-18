@@ -61,7 +61,7 @@ namespace Negocio
 				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
 				comando.CommandType = System.Data.CommandType.Text;
 				comando.CommandText = "insert into BEBIDAS (Nombre, Marca, Contiene_Alcohol, Precio_Unitario) values";
-				comando.CommandText += "('" + nuevo.Nombre + "', '" + nuevo.Marca + "', '" + nuevo.ContieneAlcohol.ToString() + "', '" + nuevo.PrecioUnitario.ToString()+ ")";
+				comando.CommandText += "('" + nuevo.Nombre + "', '" + nuevo.Marca + "', '" + nuevo.ContieneAlcohol.ToString() + "', '" + nuevo.PrecioUnitario.ToString()+ "')";
 				comando.Connection = conexion;
 				conexion.Open();
 

@@ -22,31 +22,8 @@ namespace PresentacionWinForm
 			InitializeComponent();
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
-		{
-			cargarGrilla();
-		}
 
-		private void btnAgregar_Click(object sender, EventArgs e)
-		{
-			FrmAltaBebida alta = new FrmAltaBebida();
-			alta.ShowDialog();
-			cargarGrilla();
-		}
 
-		private void btnModificar_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				FrmAltaBebida modificar = new FrmAltaBebida((Bebida)dgvBebida.CurrentRow.DataBoundItem);
-				modificar.ShowDialog();
-				cargarGrilla();
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.ToString());
-			}
-		}
 
 		private void cargarGrilla()
 		{
@@ -63,5 +40,30 @@ namespace PresentacionWinForm
 			}
 		}
 
+		private void FrmBebida_Load(object sender, EventArgs e)
+		{
+			cargarGrilla();
+		}
+
+		private void btnAgregar_Click_1(object sender, EventArgs e)
+		{
+			FrmAltaBebida alta = new FrmAltaBebida();
+			alta.ShowDialog();
+			cargarGrilla();
+		}
+
+		private void btnModificar_Click_1(object sender, EventArgs e)
+		{
+			try
+			{
+				FrmAltaBebida modificar = new FrmAltaBebida((Bebida)dgvBebida.CurrentRow.DataBoundItem);
+				modificar.ShowDialog();
+				cargarGrilla();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+		}
 	}
 }
