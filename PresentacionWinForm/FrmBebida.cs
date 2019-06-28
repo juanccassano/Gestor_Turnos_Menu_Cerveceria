@@ -65,5 +65,19 @@ namespace PresentacionWinForm
 				MessageBox.Show(ex.ToString());
 			}
 		}
+
+		private void btnBorrar_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				BebidaNegocio negocio = new BebidaNegocio();
+				negocio.borrarBebida ((Bebida)dgvBebida.CurrentRow.DataBoundItem);
+				cargarGrilla();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+		}
 	}
 }

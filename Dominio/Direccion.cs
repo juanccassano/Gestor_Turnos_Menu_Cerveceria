@@ -8,8 +8,15 @@ namespace Dominio
 {
     public class Direccion
     {
-     public string Localidad { get; set; }
         public string Calle { get; set; }
         public int Numeracion { get; set; }
-    }
+		public string Localidad { get; set; }
+
+		public override string ToString()
+		{
+			string devuelto;
+			devuelto = Calle + " " + Numeracion.ToString();
+			return devuelto;
+		}
+	}
 }

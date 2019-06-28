@@ -22,8 +22,7 @@ namespace Negocio
 			{
 				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
 				comando.CommandType = System.Data.CommandType.Text;
-				//MSF-20190420: agregué todos los datos del heroe. Incluso su universo, que lo traigo con join.
-				comando.CommandText = "select B.ID, B.Nombre, B.Marca, B.Contiene_Alcohol, B.Precio_Unitario From BEBIDAS B";
+				comando.CommandText = "select B.ID, B.Nombre, B.Marca, B.Contiene_Alcohol, B.Precio_Unitario, B.Estado From BEBIDAS B where B.Estado =1";
 				comando.Connection = conexion;
 				conexion.Open();
 				lector = comando.ExecuteReader();
@@ -103,5 +102,29 @@ namespace Negocio
 				accesoDatos.cerrarConexion();
 			}
 		}
+
+		public void borrarBebida (Bebida borrar)
+		{
+			AccesoDatosManager accesoDatos = new AccesoDatosManager();
+			try
+			{
+
+				accesoDatos.setearConsulta("update BEBIDAS Set Estado=0 Where Id=" + borrar.ID.ToString());
+				accesoDatos.Comando.Parameters.Clear();
+				accesoDatos.abrirConexion();
+				accesoDatos.ejecutarAccion();
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				accesoDatos.cerrarConexion();
+			}
+
+		}
+
 	}
 }

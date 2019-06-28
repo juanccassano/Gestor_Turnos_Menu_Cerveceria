@@ -36,11 +36,12 @@
 			this.btnMesa6 = new System.Windows.Forms.Button();
 			this.btnMesa7 = new System.Windows.Forms.Button();
 			this.btnMesa8 = new System.Windows.Forms.Button();
+			this.btnCaja = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnMesa1
 			// 
-			this.btnMesa1.Location = new System.Drawing.Point(12, 12);
+			this.btnMesa1.Location = new System.Drawing.Point(12, 73);
 			this.btnMesa1.Name = "btnMesa1";
 			this.btnMesa1.Size = new System.Drawing.Size(146, 66);
 			this.btnMesa1.TabIndex = 0;
@@ -49,7 +50,7 @@
 			// 
 			// btnMesa2
 			// 
-			this.btnMesa2.Location = new System.Drawing.Point(164, 12);
+			this.btnMesa2.Location = new System.Drawing.Point(166, 73);
 			this.btnMesa2.Name = "btnMesa2";
 			this.btnMesa2.Size = new System.Drawing.Size(146, 66);
 			this.btnMesa2.TabIndex = 1;
@@ -58,7 +59,7 @@
 			// 
 			// btnMesa3
 			// 
-			this.btnMesa3.Location = new System.Drawing.Point(12, 84);
+			this.btnMesa3.Location = new System.Drawing.Point(12, 145);
 			this.btnMesa3.Name = "btnMesa3";
 			this.btnMesa3.Size = new System.Drawing.Size(146, 66);
 			this.btnMesa3.TabIndex = 2;
@@ -67,7 +68,7 @@
 			// 
 			// btnMesa4
 			// 
-			this.btnMesa4.Location = new System.Drawing.Point(164, 84);
+			this.btnMesa4.Location = new System.Drawing.Point(166, 145);
 			this.btnMesa4.Name = "btnMesa4";
 			this.btnMesa4.Size = new System.Drawing.Size(146, 66);
 			this.btnMesa4.TabIndex = 3;
@@ -76,7 +77,7 @@
 			// 
 			// btnMesa5
 			// 
-			this.btnMesa5.Location = new System.Drawing.Point(12, 156);
+			this.btnMesa5.Location = new System.Drawing.Point(12, 217);
 			this.btnMesa5.Name = "btnMesa5";
 			this.btnMesa5.Size = new System.Drawing.Size(146, 66);
 			this.btnMesa5.TabIndex = 4;
@@ -85,7 +86,7 @@
 			// 
 			// btnMesa6
 			// 
-			this.btnMesa6.Location = new System.Drawing.Point(164, 156);
+			this.btnMesa6.Location = new System.Drawing.Point(166, 217);
 			this.btnMesa6.Name = "btnMesa6";
 			this.btnMesa6.Size = new System.Drawing.Size(146, 66);
 			this.btnMesa6.TabIndex = 5;
@@ -94,7 +95,7 @@
 			// 
 			// btnMesa7
 			// 
-			this.btnMesa7.Location = new System.Drawing.Point(12, 228);
+			this.btnMesa7.Location = new System.Drawing.Point(12, 289);
 			this.btnMesa7.Name = "btnMesa7";
 			this.btnMesa7.Size = new System.Drawing.Size(146, 66);
 			this.btnMesa7.TabIndex = 6;
@@ -103,18 +104,29 @@
 			// 
 			// btnMesa8
 			// 
-			this.btnMesa8.Location = new System.Drawing.Point(164, 228);
+			this.btnMesa8.Location = new System.Drawing.Point(164, 289);
 			this.btnMesa8.Name = "btnMesa8";
 			this.btnMesa8.Size = new System.Drawing.Size(146, 66);
 			this.btnMesa8.TabIndex = 7;
 			this.btnMesa8.Text = "Mesa 8";
 			this.btnMesa8.UseVisualStyleBackColor = true;
 			// 
+			// btnCaja
+			// 
+			this.btnCaja.Location = new System.Drawing.Point(12, 12);
+			this.btnCaja.Name = "btnCaja";
+			this.btnCaja.Size = new System.Drawing.Size(300, 55);
+			this.btnCaja.TabIndex = 8;
+			this.btnCaja.Text = "Pedido en caja";
+			this.btnCaja.UseVisualStyleBackColor = true;
+			this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+			// 
 			// FrmSalon
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(322, 307);
+			this.ClientSize = new System.Drawing.Size(326, 367);
+			this.Controls.Add(this.btnCaja);
 			this.Controls.Add(this.btnMesa8);
 			this.Controls.Add(this.btnMesa7);
 			this.Controls.Add(this.btnMesa6);
@@ -139,5 +151,6 @@
 		private System.Windows.Forms.Button btnMesa6;
 		private System.Windows.Forms.Button btnMesa7;
 		private System.Windows.Forms.Button btnMesa8;
+		private System.Windows.Forms.Button btnCaja;
 	}
 }

@@ -26,8 +26,7 @@ namespace PresentacionWinForm
 			bebidaLocal = bebida;
 		}
 
-
-		private void FrmAltaBebida_Load(object sender, EventArgs e)
+		private void FrmAltaBebida_Load_1(object sender, EventArgs e)
 		{
 
 			try
@@ -46,9 +45,7 @@ namespace PresentacionWinForm
 			{
 				MessageBox.Show(ex.ToString());
 			}
-
 		}
-
 
 		private void btnAceptar_Click_1(object sender, EventArgs e)
 		{
@@ -87,5 +84,7 @@ namespace PresentacionWinForm
 		{
 			this.Close();
 		}
+
+		
 	}
 }

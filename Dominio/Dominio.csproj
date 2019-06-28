@@ -54,6 +54,7 @@
     <Compile Include="Pedido.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Plato.cs" />
+    <Compile Include="ProductoPedido.cs" />
     <Compile Include="Promocion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs" />

@@ -16,5 +16,11 @@ namespace PresentacionWinForm
 		{
 			InitializeComponent();
 		}
+
+		private void btnCaja_Click(object sender, EventArgs e)
+		{
+			FrmAltaPedido ventanaAP = new FrmAltaPedido();
+			ventanaAP.ShowDialog();
+		}
 	}
 }

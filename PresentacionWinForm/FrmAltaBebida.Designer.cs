@@ -154,6 +154,7 @@
 			this.Controls.Add(this.lblNombre);
 			this.Name = "FrmAltaBebida";
 			this.Text = "Bebida";
+			this.Load += new System.EventHandler(this.FrmAltaBebida_Load_1);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

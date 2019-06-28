@@ -77,7 +77,8 @@
 			this.btnSalon.Size = new System.Drawing.Size(326, 320);
 			this.btnSalon.TabIndex = 1;
 			this.btnSalon.UseVisualStyleBackColor = true;
-			this.btnSalon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnSalon_MouseClick);
+			this.btnSalon.Click += new System.EventHandler(this.btnSalon_Click);
+
 			// 
 			// btnEnvios
 			// 
@@ -126,18 +127,21 @@
 			this.personaToolStripMenuItem.Name = "personaToolStripMenuItem";
 			this.personaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
 			this.personaToolStripMenuItem.Text = "Empleados";
+			this.personaToolStripMenuItem.Click += new System.EventHandler(this.personaToolStripMenuItem_Click);
 			// 
 			// clientesToolStripMenuItem
 			// 
 			this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
 			this.clientesToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
 			this.clientesToolStripMenuItem.Text = "Clientes";
+			this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
 			// 
 			// proveedoresToolStripMenuItem
 			// 
 			this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
 			this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
 			this.proveedoresToolStripMenuItem.Text = "Proveedores";
+			this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
 			// 
 			// articulosToolStripMenuItem
 			// 
@@ -153,26 +157,28 @@
 			// bebidaToolStripMenuItem
 			// 
 			this.bebidaToolStripMenuItem.Name = "bebidaToolStripMenuItem";
-			this.bebidaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.bebidaToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
 			this.bebidaToolStripMenuItem.Text = "Bebida";
 			this.bebidaToolStripMenuItem.Click += new System.EventHandler(this.bebidaToolStripMenuItem_Click);
 			// 
 			// cervezaToolStripMenuItem
 			// 
 			this.cervezaToolStripMenuItem.Name = "cervezaToolStripMenuItem";
-			this.cervezaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.cervezaToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
 			this.cervezaToolStripMenuItem.Text = "Cerveza";
+			this.cervezaToolStripMenuItem.Click += new System.EventHandler(this.cervezaToolStripMenuItem_Click);
 			// 
 			// platosToolStripMenuItem
 			// 
 			this.platosToolStripMenuItem.Name = "platosToolStripMenuItem";
-			this.platosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.platosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
 			this.platosToolStripMenuItem.Text = "Platos";
+			this.platosToolStripMenuItem.Click += new System.EventHandler(this.platosToolStripMenuItem_Click);
 			// 
 			// combosToolStripMenuItem
 			// 
 			this.combosToolStripMenuItem.Name = "combosToolStripMenuItem";
-			this.combosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.combosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
 			this.combosToolStripMenuItem.Text = "Combos";
 			// 
 			// reservasToolStripMenuItem

@@ -11,5 +11,6 @@ namespace Dominio
         public int ID { get; set; }
         public string TipoDescuento { get; set; }
         public int PorcentajeDescuento { get; set; }
-    }
+		public bool Estado { get; set; }
+	}
 }

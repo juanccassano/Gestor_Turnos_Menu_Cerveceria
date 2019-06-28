@@ -14,5 +14,6 @@ namespace Dominio
         public Bebida Bebida { get; set; }
         public Cerveza Cerveza { get; set; }
         public decimal PrecioUnitario { get; set; }
-    }
+		public bool Estado { get; set; }
+	}
 }

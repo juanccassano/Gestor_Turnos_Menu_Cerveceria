@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentacionWinForm", "PresentacionWinForm\PresentacionWinForm.csproj", "{E040BDEE-1808-47C6-8287-EC85F44343D8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{0FDBC135-4F63-4F11-A846-C602B5790C46}"
-	ProjectSection(SolutionItems) = preProject
-		Script SQL.txt = Script SQL.txt
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{C8752D97-E19B-4FCD-B5E1-B64A2A2A19DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentacionWebForm", "PresentacionWebForm\PresentacionWebForm.csproj", "{1F2AE66D-559C-44FA-A42A-80A67BE4CF3C}"

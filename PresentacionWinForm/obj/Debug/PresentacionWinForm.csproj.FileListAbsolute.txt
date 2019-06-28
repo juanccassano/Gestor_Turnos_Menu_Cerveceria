@@ -21,3 +21,17 @@ C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\D
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmBebida.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\bin\Debug\AccesoDatos.dll
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\bin\Debug\AccesoDatos.pdb
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.frmAltaCerveza.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.frmCerveza.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmPlato.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAltaCliente.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAltaProveedor.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmCliente.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmProveedor.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAltaEmpleado.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmEmpleado.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAgregarBebida.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAltaPedido.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmOpcionPedido.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAgregarCerveza.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAgregarPlato.resources

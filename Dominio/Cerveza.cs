@@ -13,5 +13,11 @@ namespace Dominio
         public string Tipo { get; set; }
         public decimal GraduacionAlcoholica { get; set; }
         public decimal PrecioUnitario { get; set; }
-    }
+		public bool Estado { get; set; }
+
+		public override string ToString()
+		{
+			return Nombre;
+		}
+	}
 }

@@ -9,5 +9,9 @@ namespace Dominio
     public class Telefono
     {
        public int Numero { get; set; }
-    }
+		public override string ToString()
+		{
+			return Numero.ToString();
+		}
+	}
 }

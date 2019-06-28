@@ -46,17 +46,89 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAgregarBebida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarBebida.Designer.cs">
+      <DependentUpon>FrmAgregarBebida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarCerveza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarCerveza.Designer.cs">
+      <DependentUpon>FrmAgregarCerveza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarPlato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarPlato.Designer.cs">
+      <DependentUpon>FrmAgregarPlato.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAltaBebida.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAltaBebida.Designer.cs">
       <DependentUpon>FrmAltaBebida.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaCerveza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaCerveza.Designer.cs">
+      <DependentUpon>frmAltaCerveza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAltaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaCliente.Designer.cs">
+      <DependentUpon>FrmAltaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAltaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaEmpleado.Designer.cs">
+      <DependentUpon>FrmAltaEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAltaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaPedido.Designer.cs">
+      <DependentUpon>FrmAltaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAltaPlato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaPlato.Designer.cs">
+      <DependentUpon>FrmAltaPlato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAltaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaProveedor.Designer.cs">
+      <DependentUpon>FrmAltaProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBebida.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmBebida.Designer.cs">
       <DependentUpon>FrmBebida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCerveza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCerveza.Designer.cs">
+      <DependentUpon>frmCerveza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCliente.Designer.cs">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEmpleado.Designer.cs">
+      <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMesa.cs">
       <SubType>Form</SubType>
@@ -82,6 +154,24 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOpcionPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOpcionPedido.Designer.cs">
+      <DependentUpon>FrmOpcionPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPlato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlato.Designer.cs">
+      <DependentUpon>FrmPlato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProveedor.Designer.cs">
+      <DependentUpon>FrmProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSalon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,11 +180,44 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAgregarBebida.resx">
+      <DependentUpon>FrmAgregarBebida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarCerveza.resx">
+      <DependentUpon>FrmAgregarCerveza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarPlato.resx">
+      <DependentUpon>FrmAgregarPlato.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAltaBebida.resx">
       <DependentUpon>FrmAltaBebida.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaCerveza.resx">
+      <DependentUpon>frmAltaCerveza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAltaCliente.resx">
+      <DependentUpon>FrmAltaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAltaEmpleado.resx">
+      <DependentUpon>FrmAltaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAltaPedido.resx">
+      <DependentUpon>FrmAltaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAltaProveedor.resx">
+      <DependentUpon>FrmAltaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBebida.resx">
       <DependentUpon>FrmBebida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCerveza.resx">
+      <DependentUpon>frmCerveza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEmpleado.resx">
+      <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMesa.resx">
       <DependentUpon>FrmMesa.cs</DependentUpon>
@@ -107,6 +230,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpcionPedido.resx">
+      <DependentUpon>FrmOpcionPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlato.resx">
+      <DependentUpon>FrmPlato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProveedor.resx">
+      <DependentUpon>FrmProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSalon.resx">
       <DependentUpon>FrmSalon.cs</DependentUpon>
