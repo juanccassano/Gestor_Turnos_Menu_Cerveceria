@@ -47,7 +47,9 @@
 			// 
 			this.dgvBebida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvBebida.Location = new System.Drawing.Point(12, 25);
+			this.dgvBebida.MultiSelect = false;
 			this.dgvBebida.Name = "dgvBebida";
+			this.dgvBebida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvBebida.Size = new System.Drawing.Size(532, 81);
 			this.dgvBebida.TabIndex = 0;
 			// 
@@ -87,6 +89,7 @@
 			this.btnBorrar.TabIndex = 5;
 			this.btnBorrar.Text = "Borrar";
 			this.btnBorrar.UseVisualStyleBackColor = true;
+			this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
 			// 
 			// lblCerveza
 			// 
@@ -101,7 +104,9 @@
 			// 
 			this.dgvCerveza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvCerveza.Location = new System.Drawing.Point(12, 125);
+			this.dgvCerveza.MultiSelect = false;
 			this.dgvCerveza.Name = "dgvCerveza";
+			this.dgvCerveza.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvCerveza.Size = new System.Drawing.Size(532, 81);
 			this.dgvCerveza.TabIndex = 7;
 			// 
@@ -118,7 +123,9 @@
 			// 
 			this.dgvPlato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvPlato.Location = new System.Drawing.Point(12, 225);
+			this.dgvPlato.MultiSelect = false;
 			this.dgvPlato.Name = "dgvPlato";
+			this.dgvPlato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvPlato.Size = new System.Drawing.Size(532, 81);
 			this.dgvPlato.TabIndex = 9;
 			// 

@@ -32,7 +32,7 @@ namespace PresentacionWinForm
 
 		private void btnAceptar_Click(object sender, EventArgs e)
 		{
-			pedido.agregarBebidaPedido(IDPedidoLocal, cervezaLocal.ID, Convert.ToInt32(txtCantidad.Text), Convert.ToDecimal(cervezaLocal.PrecioUnitario * Convert.ToInt32(txtCantidad.Text)));
+			pedido.agregarCervezaPedido(IDPedidoLocal, cervezaLocal.ID, Convert.ToInt32(txtCantidad.Text), Convert.ToDecimal(cervezaLocal.PrecioUnitario * Convert.ToInt32(txtCantidad.Text)));
 			Close();
 		}
 

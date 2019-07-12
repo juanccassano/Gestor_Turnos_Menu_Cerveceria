@@ -62,7 +62,7 @@ namespace Negocio
 			{
 				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
 				comando.CommandType = System.Data.CommandType.Text;
-				comando.CommandText = "select P.IDBebida, B.Marca, P.IDPedido, P.Cantidad, P.Precio_Parcial From PRODUCTOS_POR_PEDIDO P, BEBIDAS B where (P.IDBebida = B.ID) AND P.IDPedido=" + IDPedido.ToString();
+				comando.CommandText = "select P.IDBebida, B.Marca, P.IDPedido, P.Cantidad, P.Precio_Parcial, P.ID From PRODUCTOS_POR_PEDIDO P, BEBIDAS B where (P.IDBebida = B.ID) AND P.IDPedido=" + IDPedido.ToString();
 				comando.Connection = conexion;
 				conexion.Open();
 				lector = comando.ExecuteReader();
@@ -75,6 +75,7 @@ namespace Negocio
 					bebida.IDPedido = lector.GetInt32(2);
 					bebida.Cantidad = lector.GetInt32(3);
 					bebida.PrecioParcial = lector.GetDecimal(4);
+					bebida.IDEnPedido = lector.GetInt32(5);
 					listado.Add(bebida);
 				}
 
@@ -102,7 +103,7 @@ namespace Negocio
 			{
 				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
 				comando.CommandType = System.Data.CommandType.Text;
-				comando.CommandText = "select P.IDCerveza, C.Nombre, P.IDPedido, P.Cantidad, P.Precio_Parcial From PRODUCTOS_POR_PEDIDO P, CERVEZAS C where (P.IDCerveza = C.ID) AND P.IDPedido=" + IDPedido.ToString();
+				comando.CommandText = "select P.IDCerveza, C.Nombre, P.IDPedido, P.Cantidad, P.Precio_Parcial, P.ID From PRODUCTOS_POR_PEDIDO P, CERVEZAS C where (P.IDCerveza = C.ID) AND P.IDPedido=" + IDPedido.ToString();
 				comando.Connection = conexion;
 				conexion.Open();
 				lector = comando.ExecuteReader();
@@ -115,6 +116,7 @@ namespace Negocio
 					cerveza.IDPedido = lector.GetInt32(2);
 					cerveza.Cantidad = lector.GetInt32(3);
 					cerveza.PrecioParcial = lector.GetDecimal(4);
+					cerveza.IDEnPedido = lector.GetInt32(5);
 					listado.Add(cerveza);
 				}
 
@@ -142,7 +144,7 @@ namespace Negocio
 			{
 				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
 				comando.CommandType = System.Data.CommandType.Text;
-				comando.CommandText = "select P.IDPlato, PL.Nombre, P.IDPedido, P.Cantidad, P.Precio_Parcial From PRODUCTOS_POR_PEDIDO P, PLATOS PL where (P.IDPlato = PL.ID) AND P.IDPedido=" + IDPedido.ToString();
+				comando.CommandText = "select P.IDPlato, PL.Nombre, P.IDPedido, P.Cantidad, P.Precio_Parcial, P.ID From PRODUCTOS_POR_PEDIDO P, PLATOS PL where (P.IDPlato = PL.ID) AND P.IDPedido=" + IDPedido.ToString();
 				comando.Connection = conexion;
 				conexion.Open();
 				lector = comando.ExecuteReader();
@@ -155,6 +157,7 @@ namespace Negocio
 					plato.IDPedido = lector.GetInt32(2);
 					plato.Cantidad = lector.GetInt32(3);
 					plato.PrecioParcial = lector.GetDecimal(4);
+					plato.IDEnPedido = lector.GetInt32(5);
 					listado.Add(plato);
 				}
 
@@ -258,6 +261,7 @@ namespace Negocio
 			}
 		}
 
+
 		public decimal precioFinalPedido(int IDPedido)
 		{
 			SqlConnection conexion = new SqlConnection();
@@ -269,14 +273,21 @@ namespace Negocio
 			{
 				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
 				comando.CommandType = System.Data.CommandType.Text;
-				comando.CommandText = "select SUM(Precio_Parcial) From PRODUCTOS_POR_PEDIDO where IDPedido =" + IDPedido.ToString(); ;
+				comando.CommandText = "select SUM(Precio_Parcial) as 'Precio' From PRODUCTOS_POR_PEDIDO where IDPedido =" + IDPedido.ToString();
 				comando.Connection = conexion;
 				conexion.Open();
 				lector = comando.ExecuteReader();
 
 				while (lector.Read())
 				{
-					pedido = lector.GetDecimal(0);
+					if (!Convert.IsDBNull(lector["Precio"]))
+					{
+						pedido = lector.GetDecimal(0);
+					}
+					else
+					{
+						return 0;
+					}
 				}
 
 				return pedido;
@@ -359,6 +370,126 @@ namespace Negocio
 				conexion.Open();
 
 				comando.ExecuteNonQuery();
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public void borrarBebida (int IDPedido, int IDBebida)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "Delete from PRODUCTOS_POR_PEDIDO where ID =" + IDBebida.ToString(); ;
+				comando.Connection = conexion;
+				conexion.Open();
+				comando.ExecuteNonQuery();
+
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public void borrarCerveza(int IDPedido, int IDCerveza)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "Delete from PRODUCTOS_POR_PEDIDO where ID =" + IDCerveza.ToString(); ;
+				comando.Connection = conexion;
+				conexion.Open();
+				comando.ExecuteNonQuery();
+
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public void borrarPlato(int IDPedido, int IDPlato)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "Delete from PRODUCTOS_POR_PEDIDO where ID =" + IDPlato.ToString(); ;
+				comando.Connection = conexion;
+				conexion.Open();
+				comando.ExecuteNonQuery();
+
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public bool PedidoCerrado(int IDPedido)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			int pedido = 0;
+
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select COUNT(IDPedido) From PRODUCTOS_POR_PEDIDO where ID=" + IDPedido;
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					pedido = lector.GetInt32(0);
+				}
+
+				if (pedido == 0)
+				{
+					return true;
+				}
+
+				else
+				{
+					return false;
+				}
 
 			}
 			catch (Exception ex)

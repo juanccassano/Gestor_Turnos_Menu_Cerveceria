@@ -74,6 +74,7 @@
 			this.Name = "FrmOpcionPedido";
 			this.Text = "FrmOpcionPedido";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmOpcionPedido_FormClosed);
+			this.Load += new System.EventHandler(this.FrmOpcionPedido_Load);
 			this.ResumeLayout(false);
 
 		}

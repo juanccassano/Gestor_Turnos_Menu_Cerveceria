@@ -47,6 +47,7 @@
 			this.btnMesa1.TabIndex = 0;
 			this.btnMesa1.Text = "Mesa 1";
 			this.btnMesa1.UseVisualStyleBackColor = true;
+			this.btnMesa1.Click += new System.EventHandler(this.btnMesa1_Click);
 			// 
 			// btnMesa2
 			// 
@@ -56,6 +57,7 @@
 			this.btnMesa2.TabIndex = 1;
 			this.btnMesa2.Text = "Mesa 2";
 			this.btnMesa2.UseVisualStyleBackColor = true;
+			this.btnMesa2.Click += new System.EventHandler(this.btnMesa2_Click);
 			// 
 			// btnMesa3
 			// 
@@ -65,6 +67,7 @@
 			this.btnMesa3.TabIndex = 2;
 			this.btnMesa3.Text = "Mesa 3";
 			this.btnMesa3.UseVisualStyleBackColor = true;
+			this.btnMesa3.Click += new System.EventHandler(this.btnMesa3_Click);
 			// 
 			// btnMesa4
 			// 
@@ -74,6 +77,7 @@
 			this.btnMesa4.TabIndex = 3;
 			this.btnMesa4.Text = "Mesa 4";
 			this.btnMesa4.UseVisualStyleBackColor = true;
+			this.btnMesa4.Click += new System.EventHandler(this.btnMesa4_Click);
 			// 
 			// btnMesa5
 			// 
@@ -83,6 +87,7 @@
 			this.btnMesa5.TabIndex = 4;
 			this.btnMesa5.Text = "Mesa 5";
 			this.btnMesa5.UseVisualStyleBackColor = true;
+			this.btnMesa5.Click += new System.EventHandler(this.btnMesa5_Click);
 			// 
 			// btnMesa6
 			// 
@@ -92,6 +97,7 @@
 			this.btnMesa6.TabIndex = 5;
 			this.btnMesa6.Text = "Mesa 6";
 			this.btnMesa6.UseVisualStyleBackColor = true;
+			this.btnMesa6.Click += new System.EventHandler(this.btnMesa6_Click);
 			// 
 			// btnMesa7
 			// 
@@ -101,6 +107,7 @@
 			this.btnMesa7.TabIndex = 6;
 			this.btnMesa7.Text = "Mesa 7";
 			this.btnMesa7.UseVisualStyleBackColor = true;
+			this.btnMesa7.Click += new System.EventHandler(this.btnMesa7_Click);
 			// 
 			// btnMesa8
 			// 
@@ -110,6 +117,7 @@
 			this.btnMesa8.TabIndex = 7;
 			this.btnMesa8.Text = "Mesa 8";
 			this.btnMesa8.UseVisualStyleBackColor = true;
+			this.btnMesa8.Click += new System.EventHandler(this.btnMesa8_Click);
 			// 
 			// btnCaja
 			// 
