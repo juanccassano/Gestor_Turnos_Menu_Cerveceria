@@ -97,6 +97,7 @@
 			// 
 			// cbxNombre
 			// 
+			this.cbxNombre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbxNombre.FormattingEnabled = true;
 			this.cbxNombre.Location = new System.Drawing.Point(65, 17);
 			this.cbxNombre.Name = "cbxNombre";
@@ -119,6 +120,7 @@
 			this.txtCantidad.Name = "txtCantidad";
 			this.txtCantidad.Size = new System.Drawing.Size(121, 20);
 			this.txtCantidad.TabIndex = 10;
+			this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
 			// 
 			// FrmAgregarPlato
 			// 

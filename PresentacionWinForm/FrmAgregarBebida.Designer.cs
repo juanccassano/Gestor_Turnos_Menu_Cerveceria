@@ -42,6 +42,7 @@
 			// 
 			// cbxBebida
 			// 
+			this.cbxBebida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbxBebida.FormattingEnabled = true;
 			this.cbxBebida.Location = new System.Drawing.Point(61, 12);
 			this.cbxBebida.Name = "cbxBebida";
@@ -120,6 +121,7 @@
 			this.txtCantidad.Name = "txtCantidad";
 			this.txtCantidad.Size = new System.Drawing.Size(121, 20);
 			this.txtCantidad.TabIndex = 9;
+			this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
 			// 
 			// lblPrecioParcial
 			// 
@@ -146,6 +148,7 @@
 			this.Controls.Add(this.lblBebida);
 			this.Controls.Add(this.cbxBebida);
 			this.Name = "FrmAgregarBebida";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FrmAgregarBebida";
 			this.Load += new System.EventHandler(this.FrmAgregarBebida_Load);
 			this.ResumeLayout(false);

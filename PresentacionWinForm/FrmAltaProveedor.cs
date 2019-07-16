@@ -138,5 +138,58 @@ namespace PresentacionWinForm
 			this.Close();
 		}
 
+		private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsNumber(e.KeyChar)) && !(char.IsControl(e.KeyChar)))
+			{ e.Handled = true; }
+		}
+
+		private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsLetter(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && !(char.IsWhiteSpace(e.KeyChar)))
+			{ e.Handled = true; }
+		}
+
+		private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsLetter(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && !(char.IsWhiteSpace(e.KeyChar)))
+			{ e.Handled = true; }
+		}
+
+		private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsNumber(e.KeyChar)) && !(char.IsControl(e.KeyChar)))
+			{ e.Handled = true; }
+		}
+
+		private void txtCalle_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsLetter(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && !(char.IsWhiteSpace(e.KeyChar)))
+			{ e.Handled = true; }
+		}
+
+		private void txtNumeracion_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsNumber(e.KeyChar)) && !(char.IsControl(e.KeyChar)))
+			{ e.Handled = true; }
+		}
+
+		private void txtLocalidad_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsLetter(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && !(char.IsWhiteSpace(e.KeyChar)))
+			{ e.Handled = true; }
+		}
+
+		private void txtRubro_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsLetter(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && !(char.IsWhiteSpace(e.KeyChar)))
+			{ e.Handled = true; }
+		}
+
+		private void txtCUIT_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsNumber(e.KeyChar)) && !(char.IsControl(e.KeyChar)))
+			{ e.Handled = true; }
+		}
 	}
 }

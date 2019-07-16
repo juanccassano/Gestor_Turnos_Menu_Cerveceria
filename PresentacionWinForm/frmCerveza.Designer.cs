@@ -40,6 +40,8 @@
 			this.dgvCerveza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvCerveza.Location = new System.Drawing.Point(12, 21);
 			this.dgvCerveza.Name = "dgvCerveza";
+			this.dgvCerveza.ReadOnly = true;
+			this.dgvCerveza.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvCerveza.Size = new System.Drawing.Size(445, 353);
 			this.dgvCerveza.TabIndex = 0;
 			// 

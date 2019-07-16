@@ -64,5 +64,12 @@ namespace PresentacionWinForm
 			}
 			lblPrecioUnitario.Text = "Precio unitario: " + platoLocal.PrecioUnitario;
 		}
+
+		private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+		{
+
+			if (!(char.IsNumber(e.KeyChar)) && !(char.IsControl(e.KeyChar)))
+			{ e.Handled = true; }
+		}
 	}
 }

@@ -83,6 +83,7 @@
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.Size = new System.Drawing.Size(130, 20);
 			this.txtNombre.TabIndex = 4;
+			this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
 			// 
 			// txtMarca
 			// 
@@ -90,6 +91,7 @@
 			this.txtMarca.Name = "txtMarca";
 			this.txtMarca.Size = new System.Drawing.Size(130, 20);
 			this.txtMarca.TabIndex = 5;
+			this.txtMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMarca_KeyPress);
 			// 
 			// txtPrecioUnitario
 			// 
@@ -97,6 +99,7 @@
 			this.txtPrecioUnitario.Name = "txtPrecioUnitario";
 			this.txtPrecioUnitario.Size = new System.Drawing.Size(100, 20);
 			this.txtPrecioUnitario.TabIndex = 6;
+			this.txtPrecioUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioUnitario_KeyPress);
 			// 
 			// ckbAlcoholica
 			// 

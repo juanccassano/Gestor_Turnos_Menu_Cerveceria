@@ -49,10 +49,10 @@
 			this.dgvBebida.Location = new System.Drawing.Point(12, 25);
 			this.dgvBebida.MultiSelect = false;
 			this.dgvBebida.Name = "dgvBebida";
+			this.dgvBebida.ReadOnly = true;
 			this.dgvBebida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvBebida.Size = new System.Drawing.Size(532, 81);
 			this.dgvBebida.TabIndex = 0;
-
 			// 
 			// lblBebida
 			// 
@@ -107,6 +107,7 @@
 			this.dgvCerveza.Location = new System.Drawing.Point(12, 125);
 			this.dgvCerveza.MultiSelect = false;
 			this.dgvCerveza.Name = "dgvCerveza";
+			this.dgvCerveza.ReadOnly = true;
 			this.dgvCerveza.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvCerveza.Size = new System.Drawing.Size(532, 81);
 			this.dgvCerveza.TabIndex = 7;
@@ -126,6 +127,7 @@
 			this.dgvPlato.Location = new System.Drawing.Point(12, 225);
 			this.dgvPlato.MultiSelect = false;
 			this.dgvPlato.Name = "dgvPlato";
+			this.dgvPlato.ReadOnly = true;
 			this.dgvPlato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvPlato.Size = new System.Drawing.Size(532, 81);
 			this.dgvPlato.TabIndex = 9;

@@ -50,5 +50,18 @@ namespace PresentacionWinForm
 			lblGraduacionAlcoholica.Text = "Graduación alcoholica: " + cervezaLocal.GraduacionAlcoholica.ToString();
 			lblPrecioUnitario.Text = "Precio unitario: " + cervezaLocal.PrecioUnitario;
 		}
+
+		private void txtCantidad_TextChanged(object sender, EventArgs e)
+		{
+
+
+		}
+
+		private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+		{
+
+			if (!(char.IsNumber(e.KeyChar)) && !(char.IsControl(e.KeyChar)))
+			{ e.Handled = true; }
+		}
 	}
 }

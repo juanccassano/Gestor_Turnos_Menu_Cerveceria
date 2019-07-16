@@ -154,6 +154,7 @@
 			this.txtDNI.Name = "txtDNI";
 			this.txtDNI.Size = new System.Drawing.Size(255, 20);
 			this.txtDNI.TabIndex = 11;
+			this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
 			// 
 			// txtApellido
 			// 
@@ -161,6 +162,7 @@
 			this.txtApellido.Name = "txtApellido";
 			this.txtApellido.Size = new System.Drawing.Size(255, 20);
 			this.txtApellido.TabIndex = 12;
+			this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
 			// 
 			// dtpFechaNac
 			// 
@@ -175,6 +177,7 @@
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.Size = new System.Drawing.Size(255, 20);
 			this.txtNombre.TabIndex = 14;
+			this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
 			// 
 			// txtTelefono
 			// 
@@ -182,6 +185,7 @@
 			this.txtTelefono.Name = "txtTelefono";
 			this.txtTelefono.Size = new System.Drawing.Size(255, 20);
 			this.txtTelefono.TabIndex = 15;
+			this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
 			// 
 			// txtCalle
 			// 
@@ -189,6 +193,7 @@
 			this.txtCalle.Name = "txtCalle";
 			this.txtCalle.Size = new System.Drawing.Size(255, 20);
 			this.txtCalle.TabIndex = 16;
+			this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalle_KeyPress);
 			// 
 			// txtNumeracion
 			// 
@@ -196,6 +201,7 @@
 			this.txtNumeracion.Name = "txtNumeracion";
 			this.txtNumeracion.Size = new System.Drawing.Size(255, 20);
 			this.txtNumeracion.TabIndex = 17;
+			this.txtNumeracion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeracion_KeyPress);
 			// 
 			// txtLocalidad
 			// 
@@ -203,6 +209,7 @@
 			this.txtLocalidad.Name = "txtLocalidad";
 			this.txtLocalidad.Size = new System.Drawing.Size(255, 20);
 			this.txtLocalidad.TabIndex = 18;
+			this.txtLocalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLocalidad_KeyPress);
 			// 
 			// btnAceptar
 			// 

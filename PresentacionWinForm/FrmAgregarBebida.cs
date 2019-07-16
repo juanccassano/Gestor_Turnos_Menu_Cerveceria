@@ -62,5 +62,12 @@ namespace PresentacionWinForm
 			//precioParcial = bebidaLocal.PrecioUnitario * Cantidad;
 			//lblPrecioParcial.Text = "Precio parcial: " + precioParcial.ToString();
 		}
+
+		private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+		{
+
+			if (!(char.IsNumber(e.KeyChar)) && !(char.IsControl(e.KeyChar))) 
+			{ e.Handled = true; }
+		}
 	}
 }

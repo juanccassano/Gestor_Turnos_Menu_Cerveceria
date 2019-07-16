@@ -40,6 +40,8 @@
 			this.dgvPlato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvPlato.Location = new System.Drawing.Point(12, 12);
 			this.dgvPlato.Name = "dgvPlato";
+			this.dgvPlato.ReadOnly = true;
+			this.dgvPlato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvPlato.Size = new System.Drawing.Size(467, 351);
 			this.dgvPlato.TabIndex = 0;
 			// 

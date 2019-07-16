@@ -43,6 +43,7 @@
 			this.dgvEmpleado.Location = new System.Drawing.Point(7, 6);
 			this.dgvEmpleado.Name = "dgvEmpleado";
 			this.dgvEmpleado.ReadOnly = true;
+			this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvEmpleado.Size = new System.Drawing.Size(686, 438);
 			this.dgvEmpleado.TabIndex = 0;
 			this.dgvEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellContentClick);

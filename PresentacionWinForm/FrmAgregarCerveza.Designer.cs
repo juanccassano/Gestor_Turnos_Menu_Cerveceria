@@ -97,6 +97,7 @@
 			// 
 			// cbxCerveza
 			// 
+			this.cbxCerveza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbxCerveza.FormattingEnabled = true;
 			this.cbxCerveza.Location = new System.Drawing.Point(65, 6);
 			this.cbxCerveza.Name = "cbxCerveza";
@@ -119,6 +120,8 @@
 			this.txtCantidad.Name = "txtCantidad";
 			this.txtCantidad.Size = new System.Drawing.Size(121, 20);
 			this.txtCantidad.TabIndex = 8;
+			this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+			this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
 			// 
 			// FrmAgregarCerveza
 			// 

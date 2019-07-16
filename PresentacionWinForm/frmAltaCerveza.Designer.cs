@@ -92,6 +92,7 @@
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.Size = new System.Drawing.Size(181, 20);
 			this.txtNombre.TabIndex = 5;
+			this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
 			// 
 			// txtTipo
 			// 
@@ -99,6 +100,7 @@
 			this.txtTipo.Name = "txtTipo";
 			this.txtTipo.Size = new System.Drawing.Size(196, 20);
 			this.txtTipo.TabIndex = 6;
+			this.txtTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTipo_KeyPress);
 			// 
 			// txtPrecioUnitario
 			// 
@@ -106,6 +108,7 @@
 			this.txtPrecioUnitario.Name = "txtPrecioUnitario";
 			this.txtPrecioUnitario.Size = new System.Drawing.Size(151, 20);
 			this.txtPrecioUnitario.TabIndex = 7;
+			this.txtPrecioUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioUnitario_KeyPress);
 			// 
 			// txtGraduacionAlcoholica
 			// 
@@ -113,6 +116,7 @@
 			this.txtGraduacionAlcoholica.Name = "txtGraduacionAlcoholica";
 			this.txtGraduacionAlcoholica.Size = new System.Drawing.Size(112, 20);
 			this.txtGraduacionAlcoholica.TabIndex = 8;
+			this.txtGraduacionAlcoholica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGraduacionAlcoholica_KeyPress);
 			// 
 			// lblAceptar
 			// 

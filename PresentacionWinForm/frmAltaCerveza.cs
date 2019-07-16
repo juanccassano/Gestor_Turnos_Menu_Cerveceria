@@ -83,6 +83,32 @@ namespace PresentacionWinForm
 			this.Close();
 		}
 
+		private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsLetter(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && !(char.IsWhiteSpace(e.KeyChar)))
+			{ e.Handled = true; }
 
+		}
+
+		private void txtTipo_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!(char.IsLetter(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && !(char.IsWhiteSpace(e.KeyChar)))
+			{ e.Handled = true; }
+
+		}
+
+		private void txtGraduacionAlcoholica_KeyPress(object sender, KeyPressEventArgs e)
+		{
+
+			if (!(char.IsNumber(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && e.KeyChar != '.')
+			{ e.Handled = true; }
+		}
+
+		private void txtPrecioUnitario_KeyPress(object sender, KeyPressEventArgs e)
+		{
+
+			if (!(char.IsNumber(e.KeyChar)) && !(char.IsControl(e.KeyChar)) && e.KeyChar != '.')
+			{ e.Handled = true; }
+		}
 	}
 }

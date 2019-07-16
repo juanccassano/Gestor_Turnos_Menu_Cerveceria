@@ -215,6 +215,7 @@
 			this.txtDNI.Name = "txtDNI";
 			this.txtDNI.Size = new System.Drawing.Size(241, 20);
 			this.txtDNI.TabIndex = 17;
+			this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
 			// 
 			// txtApellido
 			// 
@@ -222,6 +223,7 @@
 			this.txtApellido.Name = "txtApellido";
 			this.txtApellido.Size = new System.Drawing.Size(241, 20);
 			this.txtApellido.TabIndex = 18;
+			this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
 			// 
 			// txtNombre
 			// 
@@ -229,6 +231,7 @@
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.Size = new System.Drawing.Size(241, 20);
 			this.txtNombre.TabIndex = 19;
+			this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
 			// 
 			// txtCUIT
 			// 
@@ -236,6 +239,7 @@
 			this.txtCUIT.Name = "txtCUIT";
 			this.txtCUIT.Size = new System.Drawing.Size(241, 20);
 			this.txtCUIT.TabIndex = 20;
+			this.txtCUIT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCUIT_KeyPress);
 			// 
 			// txtLocalidad
 			// 
@@ -243,6 +247,7 @@
 			this.txtLocalidad.Name = "txtLocalidad";
 			this.txtLocalidad.Size = new System.Drawing.Size(241, 20);
 			this.txtLocalidad.TabIndex = 21;
+			this.txtLocalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLocalidad_KeyPress);
 			// 
 			// txtRubro
 			// 
@@ -250,6 +255,7 @@
 			this.txtRubro.Name = "txtRubro";
 			this.txtRubro.Size = new System.Drawing.Size(241, 20);
 			this.txtRubro.TabIndex = 22;
+			this.txtRubro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRubro_KeyPress);
 			// 
 			// txtNumeracion
 			// 
@@ -257,6 +263,7 @@
 			this.txtNumeracion.Name = "txtNumeracion";
 			this.txtNumeracion.Size = new System.Drawing.Size(241, 20);
 			this.txtNumeracion.TabIndex = 23;
+			this.txtNumeracion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeracion_KeyPress);
 			// 
 			// txtCalle
 			// 
@@ -264,6 +271,7 @@
 			this.txtCalle.Name = "txtCalle";
 			this.txtCalle.Size = new System.Drawing.Size(241, 20);
 			this.txtCalle.TabIndex = 24;
+			this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalle_KeyPress);
 			// 
 			// txtTelefono
 			// 
@@ -271,6 +279,7 @@
 			this.txtTelefono.Name = "txtTelefono";
 			this.txtTelefono.Size = new System.Drawing.Size(241, 20);
 			this.txtTelefono.TabIndex = 25;
+			this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
 			// 
 			// dtpFechaNac
 			// 
@@ -278,7 +287,6 @@
 			this.dtpFechaNac.Name = "dtpFechaNac";
 			this.dtpFechaNac.Size = new System.Drawing.Size(200, 20);
 			this.dtpFechaNac.TabIndex = 26;
-
 			// 
 			// FrmAltaProveedor
 			// 
