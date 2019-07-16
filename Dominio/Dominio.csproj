@@ -60,6 +60,7 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="Reserva.cs" />
     <Compile Include="Telefono.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

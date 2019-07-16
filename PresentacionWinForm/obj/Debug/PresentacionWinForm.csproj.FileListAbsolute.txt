@@ -36,3 +36,4 @@ C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\D
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAgregarCerveza.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAgregarPlato.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmReserva.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.frmLogin.resources

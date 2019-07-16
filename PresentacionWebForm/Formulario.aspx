@@ -152,13 +152,13 @@
         </div>
         <div class="row">
             <div class="col-sm-4">
-                <asp:TextBox ID="txtNombre" runat="server" class="form-control txtOnly" placeholder="José" onKeyUp="javascript:validarVacio(this.id)" onblur="javascript:sacarFoco(this.id)" onfocus="javascript:enFoco(this.id)"></asp:TextBox>
+                <asp:TextBox ID="txtNombre" runat="server" class="form-control txtOnly" placeholder="Juan" onKeyUp="javascript:validarVacio(this.id)" onblur="javascript:sacarFoco(this.id)" onfocus="javascript:enFoco(this.id)"></asp:TextBox>
             </div>
             <div class="col-sm-4">
-                <asp:TextBox ID="txtApellido" runat="server" class="form-control txtOnly" placeholder="Pérez" onKeyUp="javascript:validarVacio(this.id)" onblur="javascript:sacarFoco(this.id)" onfocus="javascript:enFoco(this.id)"></asp:TextBox>
+                <asp:TextBox ID="txtApellido" runat="server" class="form-control txtOnly" placeholder="Gómez" onKeyUp="javascript:validarVacio(this.id)" onblur="javascript:sacarFoco(this.id)" onfocus="javascript:enFoco(this.id)"></asp:TextBox>
             </div>
             <div class="col-sm-4">
-                <asp:TextBox ID="txtEmail" runat="server" class="form-control" onKeyUp="javascript:validarEmail()" onfocus="javascript:validarEmail()" onblur="javascript:sacarFoco(this.id)" placeholder="jperez@gmail.com"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" class="form-control" onKeyUp="javascript:validarEmail()" onfocus="javascript:validarEmail()" onblur="javascript:sacarFoco(this.id)" placeholder="jgomez@gmail.com"></asp:TextBox>
             </div>
         </div>
         <br />

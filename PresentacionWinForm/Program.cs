@@ -11,9 +11,15 @@ namespace PresentacionWinForm
 		[STAThread]
 		static void Main()
 		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new FrmMenu());
+			//Application.EnableVisualStyles();
+			//Application.SetCompatibleTextRenderingDefault(false);
+			//Application.Run(new FrmMenu());
+			frmLogin login = new frmLogin();
+			Application.Run(login);
+			if (login.DialogResult == DialogResult.OK)
+			{
+				Application.Run(new FrmMenu(login.local));
+			}
 		}
 	}
 }

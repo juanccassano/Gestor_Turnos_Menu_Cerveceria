@@ -7,13 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
+using Dominio;
 
 namespace PresentacionWinForm
 {
     public partial class FrmMenu : Form
     {
-        public FrmMenu()
+		int usuarioIngresado;
+		string cargoUsuario;
+		UsuarioNegocio negocio = new UsuarioNegocio();
+        public FrmMenu(int usuario)
+
         {
+			usuarioIngresado = usuario;
+			cargoUsuario = negocio.tareaUsuario(usuarioIngresado) ;
             InitializeComponent();
         }
 
@@ -25,38 +33,85 @@ namespace PresentacionWinForm
 
 		private void bebidaToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			if (cargoUsuario == "Encargado")
+			{ 
 			FrmBebida ventanaB = new FrmBebida();
 			ventanaB.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("Usted no cuenta con los permisos necesarios para esta opción.");
+			}
 		}
 
 		private void cervezaToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			frmCerveza ventanaC = new frmCerveza();
-			ventanaC.ShowDialog();
+
+			if (cargoUsuario == "Encargado")
+			{
+				frmCerveza ventanaC = new frmCerveza();
+				ventanaC.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("Usted no cuenta con los permisos necesarios para esta opción.");
+			}
 		}
 
 		private void platosToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			FrmPlato ventanaP = new FrmPlato();
-			ventanaP.ShowDialog();
+
+			if (cargoUsuario == "Encargado")
+			{
+				FrmPlato ventanaP = new FrmPlato();
+				ventanaP.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("Usted no cuenta con los permisos necesarios para esta opción.");
+			}
 		}
 
 		private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			FrmProveedor ventanaPv = new FrmProveedor();
-			ventanaPv.ShowDialog();
+
+			if (cargoUsuario == "Encargado")
+			{
+				FrmProveedor ventanaPv = new FrmProveedor();
+				ventanaPv.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("Usted no cuenta con los permisos necesarios para esta opción.");
+			}
 		}
 
 		private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			FrmCliente ventanaCl = new FrmCliente();
-			ventanaCl.ShowDialog();
+
+			if (cargoUsuario == "Encargado")
+			{
+				FrmCliente ventanaCl = new FrmCliente();
+				ventanaCl.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("Usted no cuenta con los permisos necesarios para esta opción.");
+			}
 		}
 
 		private void personaToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			FrmAltaEmpleado ventanaAE = new FrmAltaEmpleado();
-			ventanaAE.ShowDialog();
+
+			if (cargoUsuario == "Encargado")
+			{
+				FrmAltaEmpleado ventanaAE = new FrmAltaEmpleado();
+				ventanaAE.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("Usted no cuenta con los permisos necesarios para esta opción.");
+			}
 		}
 
 		private void btnSalon_Click(object sender, EventArgs e)
@@ -72,8 +127,22 @@ namespace PresentacionWinForm
 
 		private void reservasToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			FrmReserva ventanaR = new FrmReserva();
-			ventanaR.ShowDialog();
+
+
+			if (cargoUsuario == "Encargado")
+			{
+				FrmReserva ventanaR = new FrmReserva();
+				ventanaR.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("Usted no cuenta con los permisos necesarios para esta opción.");
+			}
+		}
+
+		private void FrmMenu_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
