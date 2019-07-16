@@ -52,6 +52,7 @@
 			this.dgvBebida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvBebida.Size = new System.Drawing.Size(532, 81);
 			this.dgvBebida.TabIndex = 0;
+
 			// 
 			// lblBebida
 			// 

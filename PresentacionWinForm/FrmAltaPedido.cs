@@ -91,5 +91,6 @@ namespace PresentacionWinForm
 			FrmOpcionPedido ventanaOP = new FrmOpcionPedido(IDPedido, this, borrar, bebSel , cerSel, plaSel);
 			ventanaOP.ShowDialog();
 		}
+
 	}
 }

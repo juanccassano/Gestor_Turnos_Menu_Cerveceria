@@ -47,14 +47,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Nombre de la aplicación</a>
+                    <a class="navbar-brand" runat="server" href="~/Landing">Inicio</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/About">Acerca de</a></li>
-                        <li><a runat="server" href="~/Contact">Contacto</a></li>
-                        <li><a runat="server" href="~/Heroes">Heroes</a></li>
+                        <li><a runat="server" href="~/About">Quienes somos</a></li>
+                        <li><a runat="server" href="~/Formulario">Reservar mesa</a></li>
+            
                     </ul>
                 </div>
             </div>
@@ -64,7 +63,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now %> - Mi aplicación EN PROGRAMACION III</p>
+                <p>&copy; <%: DateTime.Now %> - Cervecería</p>
             </footer>
         </div>
 

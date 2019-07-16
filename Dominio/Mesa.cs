@@ -10,8 +10,6 @@ namespace Dominio
     {
         public int ID { get; set; }
         public int CantidadDeEspacios { get; set; }
-        public Cliente Cliente { get; set; }
-        public Pedido Pedido { get; set; }
-		public bool Estado { get; set; }
+		public bool Reservada { get; set; }
 	}
 }

@@ -75,3 +75,9 @@ C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWebForm\obj\D
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWebForm\obj\Debug\PresentacionWebForm.csproj.CopyComplete
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWebForm\obj\Debug\PresentacionWebForm.dll
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWebForm\obj\Debug\PresentacionWebForm.pdb
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWebForm\bin\AccesoDatos.dll
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWebForm\bin\Dominio.dll
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWebForm\bin\Negocio.dll
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWebForm\bin\AccesoDatos.pdb
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWebForm\bin\Dominio.pdb
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWebForm\bin\Negocio.pdb

@@ -10,6 +10,6 @@
 namespace PresentacionWebForm {
     
     
-    public partial class About {
+    public partial class Landing {
     }
 }

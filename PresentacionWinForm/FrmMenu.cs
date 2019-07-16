@@ -64,5 +64,16 @@ namespace PresentacionWinForm
 			FrmSalon ventanaS = new FrmSalon();
 			ventanaS.ShowDialog();
 		}
+
+		private void btnEnvios_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void reservasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FrmReserva ventanaR = new FrmReserva();
+			ventanaR.ShowDialog();
+		}
 	}
 }

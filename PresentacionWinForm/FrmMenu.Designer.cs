@@ -78,7 +78,6 @@
 			this.btnSalon.TabIndex = 1;
 			this.btnSalon.UseVisualStyleBackColor = true;
 			this.btnSalon.Click += new System.EventHandler(this.btnSalon_Click);
-
 			// 
 			// btnEnvios
 			// 
@@ -88,6 +87,7 @@
 			this.btnEnvios.Size = new System.Drawing.Size(323, 320);
 			this.btnEnvios.TabIndex = 0;
 			this.btnEnvios.UseVisualStyleBackColor = true;
+			this.btnEnvios.Click += new System.EventHandler(this.btnEnvios_Click);
 			this.btnEnvios.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnEnvios_MouseClick);
 			// 
 			// mstMenu
@@ -119,7 +119,7 @@
             this.clientesToolStripMenuItem,
             this.proveedoresToolStripMenuItem});
 			this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-			this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.salirToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
 			this.salirToolStripMenuItem.Text = "Personas";
 			// 
 			// personaToolStripMenuItem
@@ -151,7 +151,7 @@
             this.platosToolStripMenuItem,
             this.combosToolStripMenuItem});
 			this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
-			this.articulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.articulosToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
 			this.articulosToolStripMenuItem.Text = "Articulos";
 			// 
 			// bebidaToolStripMenuItem
@@ -186,6 +186,7 @@
 			this.reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
 			this.reservasToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
 			this.reservasToolStripMenuItem.Text = "Reservas";
+			this.reservasToolStripMenuItem.Click += new System.EventHandler(this.reservasToolStripMenuItem_Click);
 			// 
 			// listaDeEsperaToolStripMenuItem
 			// 
