@@ -15,13 +15,14 @@ namespace PresentacionWinForm
     public partial class FrmMenu : Form
     {
 		int usuarioIngresado;
-		string cargoUsuario;
+		string cargoUsuario, datosUsuario;
 		UsuarioNegocio negocio = new UsuarioNegocio();
         public FrmMenu(int usuario)
 
         {
 			usuarioIngresado = usuario;
 			cargoUsuario = negocio.tareaUsuario(usuarioIngresado) ;
+			datosUsuario = negocio.datosUsuario(usuarioIngresado); 
             InitializeComponent();
         }
 
@@ -116,7 +117,7 @@ namespace PresentacionWinForm
 
 		private void btnSalon_Click(object sender, EventArgs e)
 		{
-			FrmSalon ventanaS = new FrmSalon();
+			FrmSalon ventanaS = new FrmSalon(usuarioIngresado);
 			ventanaS.ShowDialog();
 		}
 

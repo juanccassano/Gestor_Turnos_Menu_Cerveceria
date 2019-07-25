@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Empleado : Persona
-    {
+	public class Empleado : Persona
+	{
 		public int ID { get; set; }
-        public string Tarea { get; set; }
-        public Fecha FechaIngreso { get; set; }
+		public string Tarea { get; set; }
+		public Fecha FechaIngreso { get; set; }
 		public bool Estado { get; set; }
+
+
+		public override string ToString()
+		{
+			return Nombre+" "+Apellido;
+		}
 	}
 }

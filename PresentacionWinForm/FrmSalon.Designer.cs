@@ -133,7 +133,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(326, 367);
+			this.ClientSize = new System.Drawing.Size(317, 365);
 			this.Controls.Add(this.btnCaja);
 			this.Controls.Add(this.btnMesa8);
 			this.Controls.Add(this.btnMesa7);

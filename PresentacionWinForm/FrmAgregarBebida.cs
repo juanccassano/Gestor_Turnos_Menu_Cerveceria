@@ -69,5 +69,10 @@ namespace PresentacionWinForm
 			if (!(char.IsNumber(e.KeyChar)) && !(char.IsControl(e.KeyChar))) 
 			{ e.Handled = true; }
 		}
+
+		private void cbxBebida_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

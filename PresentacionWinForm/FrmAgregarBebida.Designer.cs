@@ -48,6 +48,7 @@
 			this.cbxBebida.Name = "cbxBebida";
 			this.cbxBebida.Size = new System.Drawing.Size(121, 21);
 			this.cbxBebida.TabIndex = 0;
+			this.cbxBebida.SelectedIndexChanged += new System.EventHandler(this.cbxBebida_SelectedIndexChanged);
 			this.cbxBebida.SelectedValueChanged += new System.EventHandler(this.cbxBebida_SelectedValueChanged);
 			// 
 			// lblBebida

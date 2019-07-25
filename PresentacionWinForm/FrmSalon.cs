@@ -16,7 +16,7 @@ namespace PresentacionWinForm
 	{
 		PedidoMesa pedido = new PedidoMesa();
 		int mesaUnoAbierta = 0, mesaDosAbierta = 0, mesaTresAbierta = 0, mesaCuatroAbierta = 0, mesaCincoAbierta = 0, mesaSeisAbierta = 0, mesaSieteAbierta = 0, mesaOchoAbierta = 0;
-		public FrmSalon()
+		public FrmSalon(int usuario)
 		{
 			InitializeComponent();
 		}

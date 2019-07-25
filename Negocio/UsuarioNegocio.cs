@@ -197,6 +197,44 @@ namespace Negocio
 			}
 		}
 
+		public string datosUsuario(int usuario)
+		{
+			string nombre = "Vacío";
+			string apellido = "Vacío";
+			string nombreCompleto = "Vacío";
+
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select NOMBRE, APELLIDO from EMPLEADOS Where ID=" + usuario.ToString();
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					nombre = lector["NOMBRE"].ToString();
+					apellido = lector["APELLIDO"].ToString();
+					nombreCompleto = nombre + " " + apellido;
+
+				}
+
+				return nombreCompleto;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
 		public int IDUsuario (string usuario)
 		{
 			int ID = 0;

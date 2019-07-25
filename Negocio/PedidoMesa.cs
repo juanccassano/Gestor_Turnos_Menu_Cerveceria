@@ -51,13 +51,13 @@ namespace Negocio
             }
         }
 
-		public List<ProductoPedido> listarBebidas(int IDPedido)
+		public List<ProductoPedido> listarProductos(int IDPedido)
 		{
 			SqlConnection conexion = new SqlConnection();
 			SqlCommand comando = new SqlCommand();
 			SqlDataReader lector;
 			List<ProductoPedido> listado = new List<ProductoPedido>();
-			ProductoPedido bebida;
+			ProductoPedido producto;
 			try
 			{
 				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
@@ -69,15 +69,95 @@ namespace Negocio
 
 				while (lector.Read())
 				{
-					bebida = new ProductoPedido();
-					bebida.IDProducto = lector.GetInt32(0);
-					bebida.Descripcion = lector["Marca"].ToString();
-					bebida.IDPedido = lector.GetInt32(2);
-					bebida.Cantidad = lector.GetInt32(3);
-					bebida.PrecioParcial = lector.GetDecimal(4);
-					bebida.IDEnPedido = lector.GetInt32(5);
-					listado.Add(bebida);
+					producto = new ProductoPedido();
+					producto.Tipo = "Bebida";
+					producto.IDProducto = lector.GetInt32(0);
+					producto.Descripcion = lector["Marca"].ToString();
+					producto.IDPedido = lector.GetInt32(2);
+					producto.Cantidad = lector.GetInt32(3);
+					producto.PrecioParcial = lector.GetDecimal(4);
+					producto.IDEnPedido = lector.GetInt32(5);
+					listado.Add(producto);
 				}
+				conexion.Close();
+				comando.CommandText = "select P.IDCerveza, C.Nombre, P.IDPedido, P.Cantidad, P.Precio_Parcial, P.ID From PRODUCTOS_POR_PEDIDO P, CERVEZAS C where (P.IDCerveza = C.ID) AND P.IDPedido=" + IDPedido.ToString();
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					producto = new ProductoPedido();
+					producto.Tipo = "Cerveza";
+					producto.IDProducto = lector.GetInt32(0);
+					producto.Descripcion = lector["Nombre"].ToString();
+					producto.IDPedido = lector.GetInt32(2);
+					producto.Cantidad = lector.GetInt32(3);
+					producto.PrecioParcial = lector.GetDecimal(4);
+					producto.IDEnPedido = lector.GetInt32(5);
+					listado.Add(producto);
+				}
+				conexion.Close();
+				comando.CommandText = "select P.IDPlato, PL.Nombre, P.IDPedido, P.Cantidad, P.Precio_Parcial, P.ID From PRODUCTOS_POR_PEDIDO P, PLATOS PL where (P.IDPlato = PL.ID) AND P.IDPedido=" + IDPedido.ToString();
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					producto = new ProductoPedido();
+					producto.Tipo = "Plato";
+					producto.IDProducto = lector.GetInt32(0);
+					producto.Descripcion = lector["Nombre"].ToString();
+					producto.IDPedido = lector.GetInt32(2);
+					producto.Cantidad = lector.GetInt32(3);
+					producto.PrecioParcial = lector.GetDecimal(4);
+					producto.IDEnPedido = lector.GetInt32(5);
+					listado.Add(producto);
+				}
+
+
+
+				return listado;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+
+		public List<ProductoPedido> listarBebidas(int IDPedido)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			List<ProductoPedido> listado = new List<ProductoPedido>();
+			ProductoPedido producto;
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select P.IDBebida, B.Marca, P.IDPedido, P.Cantidad, P.Precio_Parcial, P.ID From PRODUCTOS_POR_PEDIDO P, BEBIDAS B where (P.IDBebida = B.ID) AND P.IDPedido=" + IDPedido.ToString();
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					producto = new ProductoPedido();
+					producto.IDProducto = lector.GetInt32(0);
+					producto.Descripcion = lector["Marca"].ToString();
+					producto.IDPedido = lector.GetInt32(2);
+					producto.Cantidad = lector.GetInt32(3);
+					producto.PrecioParcial = lector.GetDecimal(4);
+					producto.IDEnPedido = lector.GetInt32(5);
+					listado.Add(producto);
+				}
+			
 
 				return listado;
 
@@ -184,11 +264,10 @@ namespace Negocio
 			{
 				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
 				comando.CommandType = System.Data.CommandType.Text;
-				comando.CommandText = "insert into PEDIDOS (IDCliente, Precio_Final) values";
-				comando.CommandText += "(NULL,1)";
+				comando.CommandText = "insert into PEDIDOS (IDCliente, IDEmpleado, Precio_Final) values";
+				comando.CommandText += "(NULL, NULL, 1)";
 				comando.Connection = conexion;
 				conexion.Open();
-
 				comando.ExecuteNonQuery();
 				
 			}
@@ -211,6 +290,29 @@ namespace Negocio
 				accesoDatos.setearConsulta("update PEDIDOS Set Precio_Final=@PF Where ID=" + IDPedido.ToString());
 				accesoDatos.Comando.Parameters.Clear();
 				accesoDatos.Comando.Parameters.AddWithValue("@PF", precioFinalPedido(IDPedido));
+				accesoDatos.abrirConexion();
+				accesoDatos.ejecutarAccion();
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				accesoDatos.cerrarConexion();
+			}
+		}
+
+		public void cargarIDEmpleado(int IDPedido, int IDEmpleado)
+		{
+			AccesoDatosManager accesoDatos = new AccesoDatosManager();
+			try
+			{
+
+				accesoDatos.setearConsulta("update PEDIDOS Set IDEMPLEADO=@IDE Where ID=" + IDPedido.ToString());
+				accesoDatos.Comando.Parameters.Clear();
+				accesoDatos.Comando.Parameters.AddWithValue("@IDE", IDEmpleado);
 				accesoDatos.abrirConexion();
 				accesoDatos.ejecutarAccion();
 

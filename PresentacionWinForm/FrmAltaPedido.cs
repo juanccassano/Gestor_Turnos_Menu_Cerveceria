@@ -15,12 +15,14 @@ namespace PresentacionWinForm
 	public partial class FrmAltaPedido : Form
 	{
 		int IDPedido;
+		EmpleadoNegocio empleado = new EmpleadoNegocio();
 		PedidoMesa pedido = new PedidoMesa();
 		public FrmAltaPedido()
 		{
 			InitializeComponent();
 			pedido.agregarPedido();
 			IDPedido = pedido.seleccionarPedido();
+			cbxMesero.DataSource = empleado.listarEmpleados();
 		}
 
 		public FrmAltaPedido(int IDPedidoAbierta)
@@ -28,6 +30,8 @@ namespace PresentacionWinForm
 			InitializeComponent();
 			IDPedido = IDPedidoAbierta;
 			FrmRefresh();
+			cbxMesero.DataSource = empleado.listarEmpleados();
+
 		}
 
 		private void btnAgregar_Click(object sender, EventArgs e)
@@ -39,57 +43,67 @@ namespace PresentacionWinForm
 
 		private void FrmAltaPedido_Load(object sender, EventArgs e)
 		{
-			//pedido.agregarPedido();
-			//IDPedido = pedido.seleccionarPedido();
+			
 
 		}
 
 		public void FrmRefresh()
 		{
-			dgvBebida.DataSource = pedido.listarBebidas(IDPedido);
-			dgvCerveza.DataSource = pedido.listarCervezas(IDPedido);
-			dgvPlato.DataSource = pedido.listarPlatos(IDPedido);
+			dgvProductos.DataSource = pedido.listarProductos(IDPedido);
+			dgvProductos.Columns[1].Visible = false;
+			dgvProductos.Columns[2].Visible = false;
+			dgvProductos.Columns[4].Visible = false;
 			lblTotal.Text = "Total: " + pedido.precioFinalPedido(IDPedido).ToString();
 			
 		}
 
 		private void btnCerrarPedido_Click(object sender, EventArgs e)
 		{
+			int IDEmpleado = 0;
+			Empleado empleadoSeleccionado = new Empleado();
+			empleadoSeleccionado = (Empleado)cbxMesero.SelectedItem;
+
 			decimal totalACobrar;
 			totalACobrar = pedido.precioFinalPedido(IDPedido);
 			pedido.cargarPedido(IDPedido);
+			IDEmpleado = empleadoSeleccionado.ID;
+			pedido.cargarIDEmpleado(IDPedido, IDEmpleado);
 			MessageBox.Show("Carga de pedido exitosa. Total a cobrar: $"+totalACobrar.ToString());
 			Close();
 		}
 
 		private void btnBorrar_Click(object sender, EventArgs e)
 		{
-			string borrar = "borrar";
-			int bebSel = -1, cerSel = -1, plaSel = -1;
-			ProductoPedido bebidaSeleccionada = new ProductoPedido();
-			ProductoPedido cervezaSeleccionada = new ProductoPedido();
-			ProductoPedido platoSeleccionado = new ProductoPedido();
+			ProductoPedido productoSeleccionado = new ProductoPedido();
 
-
-			if (dgvBebida.SelectedRows.Count > 0)
+			if (dgvProductos.SelectedRows.Count > 0)
 			{
-				bebidaSeleccionada = (ProductoPedido)dgvBebida.CurrentRow.DataBoundItem;
-				bebSel = bebidaSeleccionada.IDEnPedido;
-			}
-			if (dgvCerveza.SelectedRows.Count > 0)
-			{ 
-				cervezaSeleccionada = (ProductoPedido)dgvCerveza.CurrentRow.DataBoundItem;
-				cerSel = cervezaSeleccionada.IDEnPedido;
-			}
-			if (dgvPlato.SelectedRows.Count > 0)
-			{ 
-				platoSeleccionado = (ProductoPedido)dgvPlato.CurrentRow.DataBoundItem;
-				plaSel = platoSeleccionado.IDEnPedido;
+				productoSeleccionado = (ProductoPedido)dgvProductos.CurrentRow.DataBoundItem;
+
+				if (productoSeleccionado.Tipo == "Bebida")
+				{
+					pedido.borrarBebida(IDPedido, productoSeleccionado.IDEnPedido);
+					FrmRefresh();
+				}
+
+				if (productoSeleccionado.Tipo == "Cerveza")
+				{
+					pedido.borrarCerveza(IDPedido, productoSeleccionado.IDEnPedido);
+					FrmRefresh();
+				}
+
+				if (productoSeleccionado.Tipo == "Plato")
+				{
+					pedido.borrarPlato(IDPedido, productoSeleccionado.IDEnPedido);
+					FrmRefresh();
+				}
+
 			}
 
 
-			FrmOpcionPedido ventanaOP = new FrmOpcionPedido(IDPedido, this, borrar, bebSel , cerSel, plaSel);
-			ventanaOP.ShowDialog();
+
+			//FrmOpcionPedido ventanaOP = new FrmOpcionPedido(IDPedido, this, borrar, bebSel , cerSel, plaSel);
+			//ventanaOP.ShowDialog();
 		}
 
 	}
