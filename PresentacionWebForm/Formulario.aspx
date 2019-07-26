@@ -42,7 +42,16 @@
             });
 
 
-        $(document).ready(function () {
+            $(document).ready(function () {
+                document.getElementById("<%=btnMesaUno.ClientID%>").disabled = true;
+                document.getElementById("<%=btnMesaDos.ClientID%>").disabled = true;
+                document.getElementById("<%=btnMesaTres.ClientID%>").disabled = true;
+                document.getElementById("<%=btnMesaCuatro.ClientID%>").disabled = true;
+                document.getElementById("<%=btnMesaCinco.ClientID%>").disabled = true;
+                document.getElementById("<%=btnMesaSeis.ClientID%>").disabled = true;
+                document.getElementById("<%=btnMesaSiete.ClientID%>").disabled = true;
+                document.getElementById("<%=btnMesaOcho.ClientID%>").disabled = true;
+
             var objeto = [document.getElementById("<%=txtDNI.ClientID%>"),
                 document.getElementById("<%=txtNombre.ClientID%>"),
                 document.getElementById("<%=txtApellido.ClientID%>"),
@@ -51,8 +60,8 @@
                 document.getElementById("<%=txtCalle.ClientID%>"),
                 document.getElementById("<%=txtNumeracion.ClientID%>"),
                 document.getElementById("<%=txtLocalidad.ClientID%>")]
-            for (var i = 0; i < 4; i++) {
-                if (objeto[i].value != "" && objeto[i].value.length >= 8) {
+            for (var i = 0; i < 8; i++) {
+                if (objeto[i].value != "" && objeto[i].value.length >= 3) {
                     objeto[i].className += " border border-success";
                 }
             }
@@ -65,7 +74,11 @@
                 document.getElementById("<%=btnMesaSeis.ClientID%>").disabled = true;
                 document.getElementById("<%=btnMesaSiete.ClientID%>").disabled = true;
                 document.getElementById("<%=btnMesaOcho.ClientID%>").disabled = true;
-            }
+                }
+
+                document.getElementById("<%=txtEmail.ClientID%>").enFoco();
+                document.getElementById("<%=txtEmail.ClientID%>").sacarFoco();
+
         });
 
         function validarEmail() {
@@ -117,12 +130,13 @@
             objeto.style.boxShadow = "0 0 0 0.2rem rgba(0,123,255,0)";
         }
 
-                function botonOculto() {
-            if (document.getElementById("<%=txtDNI.ClientID%>").value != "") {
-                document.getElementById("<%=btnValidar.ClientID%>").click();
-            }
-            else {
-                alert("No has ingresado ningún DNI.")
+            function botonOculto() {
+                if (document.getElementById("<%=txtDNI.ClientID%>").value != "") {
+                    document.getElementById("<%=btnValidar.ClientID%>").click();
+                }
+                else {
+                    alert("No has ingresado ningún DNI.")
+                }
             }
         
 

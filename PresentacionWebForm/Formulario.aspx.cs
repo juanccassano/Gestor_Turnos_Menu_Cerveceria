@@ -68,7 +68,10 @@ namespace PresentacionWebForm
 			ReservaNegocio negocio = new ReservaNegocio();
 			if (negocio.estadoMesa(IDMesa))
 			{
+				
+	
 				popUp("Lamentablemente esta mesa ya se encuentra reservada.");
+				
 			}
 			else
 			{
