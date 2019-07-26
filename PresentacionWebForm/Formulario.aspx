@@ -76,8 +76,10 @@
                 document.getElementById("<%=btnMesaOcho.ClientID%>").disabled = true;
                 }
 
-                document.getElementById("<%=txtEmail.ClientID%>").enFoco();
-                document.getElementById("<%=txtEmail.ClientID%>").sacarFoco();
+                if (objeto[3].value != "" && objeto[3].value.length >= 8)
+                {
+                    objeto[3].className += "border border-success";
+                }
 
         });
 

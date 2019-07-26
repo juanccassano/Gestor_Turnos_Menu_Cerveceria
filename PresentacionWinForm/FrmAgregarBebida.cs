@@ -34,8 +34,17 @@ namespace PresentacionWinForm
 		private void btnAceptar_Click(object sender, EventArgs e)
 		{
 
-			pedido.agregarBebidaPedido(IDPedidoLocal, bebidaLocal.ID, Convert.ToInt32(txtCantidad.Text), Convert.ToDecimal(bebidaLocal.PrecioUnitario * Convert.ToInt32(txtCantidad.Text)));
-			Close();
+			if (txtCantidad.Text.Trim() != string.Empty)
+			{
+				pedido.agregarBebidaPedido(IDPedidoLocal, bebidaLocal.ID, Convert.ToInt32(txtCantidad.Text), Convert.ToDecimal(bebidaLocal.PrecioUnitario * Convert.ToInt32(txtCantidad.Text)));
+				Close();
+			}
+			
+			else
+			{
+				MessageBox.Show("Todos los campos deben estar completos.");
+			}
+
 		}
 
 		private void btnCancelar_Click(object sender, EventArgs e)

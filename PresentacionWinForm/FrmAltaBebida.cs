@@ -64,14 +64,21 @@ namespace PresentacionWinForm
 
 				if (bebidaLocal.ID != 0)
 				{
-					negocio.modificarBebida(bebidaLocal);
+
+						negocio.modificarBebida(bebidaLocal);
+						Close();
+
+					
 				}
 				else
 				{
-					negocio.agregarBebida(bebidaLocal);
-				}
 
-				Close();
+						negocio.agregarBebida(bebidaLocal);
+						Close();
+
+					}
+
+				
 
 			}
 			catch (Exception ex)
