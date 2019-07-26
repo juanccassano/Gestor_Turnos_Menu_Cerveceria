@@ -32,6 +32,7 @@
 			this.lblMesas = new System.Windows.Forms.Label();
 			this.btnReservada = new System.Windows.Forms.Button();
 			this.btnDesocupada = new System.Windows.Forms.Button();
+			this.btnVer = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -61,31 +62,43 @@
 			this.btnReservada.Name = "btnReservada";
 			this.btnReservada.Size = new System.Drawing.Size(89, 23);
 			this.btnReservada.TabIndex = 2;
-			this.btnReservada.Text = "Reservada";
+			this.btnReservada.Text = "Reservar";
 			this.btnReservada.UseVisualStyleBackColor = true;
 			this.btnReservada.Click += new System.EventHandler(this.btnReservada_Click);
 			// 
 			// btnDesocupada
 			// 
-			this.btnDesocupada.Location = new System.Drawing.Point(416, 171);
+			this.btnDesocupada.Location = new System.Drawing.Point(416, 200);
 			this.btnDesocupada.Name = "btnDesocupada";
 			this.btnDesocupada.Size = new System.Drawing.Size(89, 23);
 			this.btnDesocupada.TabIndex = 3;
-			this.btnDesocupada.Text = "Desocupada";
+			this.btnDesocupada.Text = "Desocupar";
 			this.btnDesocupada.UseVisualStyleBackColor = true;
 			this.btnDesocupada.Click += new System.EventHandler(this.btnDesocupada_Click);
+			// 
+			// btnVer
+			// 
+			this.btnVer.Location = new System.Drawing.Point(416, 171);
+			this.btnVer.Name = "btnVer";
+			this.btnVer.Size = new System.Drawing.Size(89, 23);
+			this.btnVer.TabIndex = 4;
+			this.btnVer.Text = "Ver reserva";
+			this.btnVer.UseVisualStyleBackColor = true;
+			this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
 			// 
 			// FrmReserva
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(517, 322);
+			this.Controls.Add(this.btnVer);
 			this.Controls.Add(this.btnDesocupada);
 			this.Controls.Add(this.btnReservada);
 			this.Controls.Add(this.lblMesas);
 			this.Controls.Add(this.dgvReserva);
 			this.Name = "FrmReserva";
 			this.Text = "FrmReserva";
+			this.Load += new System.EventHandler(this.FrmReserva_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvReserva)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -98,5 +111,6 @@
 		private System.Windows.Forms.Label lblMesas;
 		private System.Windows.Forms.Button btnReservada;
 		private System.Windows.Forms.Button btnDesocupada;
+		private System.Windows.Forms.Button btnVer;
 	}
 }

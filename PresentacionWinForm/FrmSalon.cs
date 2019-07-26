@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using Dominio;
+
 
 
 namespace PresentacionWinForm
@@ -15,6 +17,7 @@ namespace PresentacionWinForm
 	public partial class FrmSalon : Form
 	{
 		PedidoMesa pedido = new PedidoMesa();
+		ReservaNegocio reserva = new ReservaNegocio();
 		int mesaUnoAbierta = 0, mesaDosAbierta = 0, mesaTresAbierta = 0, mesaCuatroAbierta = 0, mesaCincoAbierta = 0, mesaSeisAbierta = 0, mesaSieteAbierta = 0, mesaOchoAbierta = 0;
 		public FrmSalon(int usuario)
 		{
@@ -30,7 +33,20 @@ namespace PresentacionWinForm
 		private void btnMesa1_Click(object sender, EventArgs e)
 		{
 			if (mesaUnoAbierta == 0)
-			{ 
+			{
+			if (reserva.estadoMesa(1))
+				{
+					Reserva reservada = new Reserva();
+					string ApNom = reserva.nombreReserva(1);
+					reservada = reserva.datosReserva(1);
+					TimeSpan diferencia = reservada.FechaHora - DateTime.Now;
+					double horas = diferencia.TotalHours;
+					if (horas > 0 && horas < 1)
+					{
+						MessageBox.Show("Recordá que hay una reserva pendiente de " + ApNom + " a las " + reservada.FechaHora.ToString() + ".");
+					}
+
+				}
 			FrmAltaPedido ventanaAP = new FrmAltaPedido();
 			mesaUnoAbierta = pedido.seleccionarPedido();
 			ventanaAP.ShowDialog();
@@ -50,6 +66,19 @@ namespace PresentacionWinForm
 		{
 			if (mesaDosAbierta == 0)
 			{
+				if (reserva.estadoMesa(2))
+				{
+					Reserva reservada = new Reserva();
+					string ApNom = reserva.nombreReserva(2);
+					reservada = reserva.datosReserva(2);
+					TimeSpan diferencia = reservada.FechaHora - DateTime.Now;
+					double horas = diferencia.TotalHours;
+					if (horas > 0 && horas < 1)
+					{
+						MessageBox.Show("Recordá que hay una reserva pendiente de " + ApNom + " a las " + reservada.FechaHora.ToString() + ".");
+					}
+
+				}
 				FrmAltaPedido ventanaAP = new FrmAltaPedido();
 				mesaDosAbierta = pedido.seleccionarPedido();
 				ventanaAP.ShowDialog();
@@ -69,6 +98,19 @@ namespace PresentacionWinForm
 		{
 			if (mesaTresAbierta == 0)
 			{
+				if (reserva.estadoMesa(3))
+				{
+					Reserva reservada = new Reserva();
+					string ApNom = reserva.nombreReserva(3);
+					reservada = reserva.datosReserva(3);
+					TimeSpan diferencia = reservada.FechaHora - DateTime.Now;
+					double horas = diferencia.TotalHours;
+					if (horas > 0 && horas < 1)
+					{
+						MessageBox.Show("Recordá que hay una reserva pendiente de " + ApNom + " a las " + reservada.FechaHora.ToString() + ".");
+					}
+
+				}
 				FrmAltaPedido ventanaAP = new FrmAltaPedido();
 				mesaTresAbierta = pedido.seleccionarPedido();
 				ventanaAP.ShowDialog();
@@ -88,6 +130,19 @@ namespace PresentacionWinForm
 		{
 			if (mesaCuatroAbierta == 0)
 			{
+				if (reserva.estadoMesa(4))
+				{
+					Reserva reservada = new Reserva();
+					string ApNom = reserva.nombreReserva(4);
+					reservada = reserva.datosReserva(4);
+					TimeSpan diferencia = reservada.FechaHora - DateTime.Now;
+					double horas = diferencia.TotalHours;
+					if (horas > 0 && horas < 1)
+					{
+						MessageBox.Show("Recordá que hay una reserva pendiente de " + ApNom + " a las " + reservada.FechaHora.ToString() + ".");
+					}
+
+				}
 				FrmAltaPedido ventanaAP = new FrmAltaPedido();
 				mesaCuatroAbierta = pedido.seleccionarPedido();
 				ventanaAP.ShowDialog();
@@ -107,6 +162,19 @@ namespace PresentacionWinForm
 		{
 			if (mesaCincoAbierta == 0)
 			{
+				if (reserva.estadoMesa(5))
+				{
+					Reserva reservada = new Reserva();
+					string ApNom = reserva.nombreReserva(5);
+					reservada = reserva.datosReserva(5);
+					TimeSpan diferencia = reservada.FechaHora - DateTime.Now;
+					double horas = diferencia.TotalHours;
+					if (horas > 0 && horas < 1)
+					{
+						MessageBox.Show("Recordá que hay una reserva pendiente de " + ApNom + " a las " + reservada.FechaHora.ToString() + ".");
+					}
+
+				}
 				FrmAltaPedido ventanaAP = new FrmAltaPedido();
 				mesaCincoAbierta = pedido.seleccionarPedido();
 				ventanaAP.ShowDialog();
@@ -126,6 +194,19 @@ namespace PresentacionWinForm
 		{
 			if (mesaSeisAbierta == 0)
 			{
+				if (reserva.estadoMesa(6))
+				{
+					Reserva reservada = new Reserva();
+					string ApNom = reserva.nombreReserva(6);
+					reservada = reserva.datosReserva(6);
+					TimeSpan diferencia = reservada.FechaHora - DateTime.Now;
+					double horas = diferencia.TotalHours;
+					if (horas > 0 && horas < 1)
+					{
+						MessageBox.Show("Recordá que hay una reserva pendiente de " + ApNom + " a las " + reservada.FechaHora.ToString() + ".");
+					}
+
+				}
 				FrmAltaPedido ventanaAP = new FrmAltaPedido();
 				mesaSeisAbierta = pedido.seleccionarPedido();
 				ventanaAP.ShowDialog();
@@ -145,6 +226,19 @@ namespace PresentacionWinForm
 		{
 			if (mesaSieteAbierta == 0)
 			{
+				if (reserva.estadoMesa(7))
+				{
+					Reserva reservada = new Reserva();
+					string ApNom = reserva.nombreReserva(7);
+					reservada = reserva.datosReserva(7);
+					TimeSpan diferencia = reservada.FechaHora - DateTime.Now;
+					double horas = diferencia.TotalHours;
+					if (horas > 0 && horas < 1)
+					{
+						MessageBox.Show("Recordá que hay una reserva pendiente de " + ApNom + " a las " + reservada.FechaHora.ToString() + ".");
+					}
+
+				}
 				FrmAltaPedido ventanaAP = new FrmAltaPedido();
 				mesaSieteAbierta = pedido.seleccionarPedido();
 				ventanaAP.ShowDialog();
@@ -164,6 +258,19 @@ namespace PresentacionWinForm
 		{
 			if (mesaOchoAbierta == 0)
 			{
+				if (reserva.estadoMesa(8))
+				{
+					Reserva reservada = new Reserva();
+					string ApNom = reserva.nombreReserva(8);
+					reservada = reserva.datosReserva(8);
+					TimeSpan diferencia = reservada.FechaHora - DateTime.Now;
+					double horas = diferencia.TotalHours;
+					if (horas > 0 && horas < 1)
+					{
+						MessageBox.Show("Recordá que hay una reserva pendiente de " + ApNom + " a las " + reservada.FechaHora.ToString() + ".");
+					}
+
+				}
 				FrmAltaPedido ventanaAP = new FrmAltaPedido();
 				mesaOchoAbierta = pedido.seleccionarPedido();
 				ventanaAP.ShowDialog();

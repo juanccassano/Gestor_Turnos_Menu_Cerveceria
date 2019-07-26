@@ -129,5 +129,192 @@ namespace Negocio
 			}
 		}
 
+		public void reservaCliente(Reserva nuevo)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "insert into RESERVAS (IDMesa, IDCliente, Fecha) values";
+				comando.CommandText += "('" + nuevo.IDMesa.ToString() + "', '" + nuevo.IDCliente.ToString() + "', '" + nuevo.FechaHora.ToString() + "')";
+				comando.Connection = conexion;
+				conexion.Open();
+
+				comando.ExecuteNonQuery();
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+
+		public string fechaReserva(int numeroMesa)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			string resultado = "";
+			try
+			{
+				conexion.ConnectionString = "data source=DESKTOP-BKKOHQN\\SQLEXPRESS; initial catalog=CASSANO_DB; integrated security=sspi";
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select TOP 1 FECHA From Reservas where IDMesa=" + numeroMesa + " ORDER BY ID DESC";
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					resultado = lector.GetDateTime(0).ToString();
+				}
+
+				return resultado;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public string nombreReserva(int numeroMesa)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			string resultado = "";
+			string apellido = "";
+			string nombre = "";
+			int IDCliente =0;
+			try
+			{
+				conexion.ConnectionString = "data source=DESKTOP-BKKOHQN\\SQLEXPRESS; initial catalog=CASSANO_DB; integrated security=sspi";
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select TOP 1 IDCLIENTE From Reservas where IDMesa=" + numeroMesa + " ORDER BY ID DESC";
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					IDCliente = lector.GetInt32(0);
+				}
+				conexion.Close();
+
+				comando.CommandText = "select APELLIDO, NOMBRE From CLIENTES where ID=" + IDCliente;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					apellido = lector["Apellido"].ToString();
+					nombre = lector["Nombre"].ToString();
+
+				}
+
+				resultado = nombre + " " + apellido;
+
+
+				return resultado;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public Reserva datosReserva(int numeroMesa)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			Reserva reserva = new Reserva();
+			try
+			{
+				conexion.ConnectionString = "data source=DESKTOP-BKKOHQN\\SQLEXPRESS; initial catalog=CASSANO_DB; integrated security=sspi";
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select TOP 1 IDMesa, IDCLIENTE, Fecha From Reservas where IDMesa=" + numeroMesa + " ORDER BY ID DESC";
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					reserva.IDMesa = lector.GetInt32(0);
+					reserva.IDCliente = lector.GetInt32(1);
+					reserva.FechaHora = lector.GetDateTime(2);
+				}
+
+				return reserva;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public bool usuarioHabilitado(int IDUsuario)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			bool resultado = true;
+			int intentos = 0;
+			try
+			{
+				conexion.ConnectionString = "data source=DESKTOP-BKKOHQN\\SQLEXPRESS; initial catalog=CASSANO_DB; integrated security=sspi";
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select INTENTOS From RESERVAS_FALLIDAS where IDCliente=" + IDUsuario;
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					intentos = lector.GetInt32(0);
+				}
+
+				if (intentos > 2)
+
+				{
+					resultado = false;
+				}
+
+				return resultado;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+
 	}
 }

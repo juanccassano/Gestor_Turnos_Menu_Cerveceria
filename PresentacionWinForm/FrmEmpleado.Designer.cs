@@ -51,6 +51,10 @@
 			this.txtTelefono = new System.Windows.Forms.TextBox();
 			this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
 			this.dtpFechaIng = new System.Windows.Forms.DateTimePicker();
+			this.lblUsuario = new System.Windows.Forms.Label();
+			this.lblClave = new System.Windows.Forms.Label();
+			this.txtUsuario = new System.Windows.Forms.TextBox();
+			this.txtClave = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// lblID
@@ -154,7 +158,7 @@
 			// 
 			// btnAceptar
 			// 
-			this.btnAceptar.Location = new System.Drawing.Point(93, 291);
+			this.btnAceptar.Location = new System.Drawing.Point(91, 335);
 			this.btnAceptar.Name = "btnAceptar";
 			this.btnAceptar.Size = new System.Drawing.Size(75, 23);
 			this.btnAceptar.TabIndex = 11;
@@ -164,7 +168,7 @@
 			// 
 			// btnCancelar
 			// 
-			this.btnCancelar.Location = new System.Drawing.Point(174, 291);
+			this.btnCancelar.Location = new System.Drawing.Point(172, 335);
 			this.btnCancelar.Name = "btnCancelar";
 			this.btnCancelar.Size = new System.Drawing.Size(75, 23);
 			this.btnCancelar.TabIndex = 12;
@@ -250,11 +254,47 @@
 			this.dtpFechaIng.Size = new System.Drawing.Size(200, 20);
 			this.dtpFechaIng.TabIndex = 22;
 			// 
+			// lblUsuario
+			// 
+			this.lblUsuario.AutoSize = true;
+			this.lblUsuario.Location = new System.Drawing.Point(12, 274);
+			this.lblUsuario.Name = "lblUsuario";
+			this.lblUsuario.Size = new System.Drawing.Size(49, 13);
+			this.lblUsuario.TabIndex = 23;
+			this.lblUsuario.Text = "Usuario: ";
+			// 
+			// lblClave
+			// 
+			this.lblClave.AutoSize = true;
+			this.lblClave.Location = new System.Drawing.Point(12, 300);
+			this.lblClave.Name = "lblClave";
+			this.lblClave.Size = new System.Drawing.Size(40, 13);
+			this.lblClave.TabIndex = 24;
+			this.lblClave.Text = "Clave: ";
+			// 
+			// txtUsuario
+			// 
+			this.txtUsuario.Location = new System.Drawing.Point(114, 271);
+			this.txtUsuario.Name = "txtUsuario";
+			this.txtUsuario.Size = new System.Drawing.Size(200, 20);
+			this.txtUsuario.TabIndex = 25;
+			// 
+			// txtClave
+			// 
+			this.txtClave.Location = new System.Drawing.Point(114, 297);
+			this.txtClave.Name = "txtClave";
+			this.txtClave.Size = new System.Drawing.Size(200, 20);
+			this.txtClave.TabIndex = 26;
+			// 
 			// FrmEmpleado
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(336, 326);
+			this.ClientSize = new System.Drawing.Size(327, 370);
+			this.Controls.Add(this.txtClave);
+			this.Controls.Add(this.txtUsuario);
+			this.Controls.Add(this.lblClave);
+			this.Controls.Add(this.lblUsuario);
 			this.Controls.Add(this.dtpFechaIng);
 			this.Controls.Add(this.dtpFechaNac);
 			this.Controls.Add(this.txtTelefono);
@@ -311,5 +351,9 @@
 		private System.Windows.Forms.TextBox txtTelefono;
 		private System.Windows.Forms.DateTimePicker dtpFechaNac;
 		private System.Windows.Forms.DateTimePicker dtpFechaIng;
+		private System.Windows.Forms.Label lblUsuario;
+		private System.Windows.Forms.Label lblClave;
+		private System.Windows.Forms.TextBox txtUsuario;
+		private System.Windows.Forms.TextBox txtClave;
 	}
 }

@@ -16,7 +16,7 @@ namespace PresentacionWinForm
 	{
 		ReservaNegocio reserva = new ReservaNegocio();
 		Mesa mesaLocal = new Mesa();
-		int mesaSeleccionada;
+		int mesaSeleccionada=1;
 		public FrmReserva()
 		{
 			InitializeComponent();
@@ -26,22 +26,59 @@ namespace PresentacionWinForm
 		private void btnReservada_Click(object sender, EventArgs e)
 		{
 			mesaLocal = (Mesa)dgvReserva.CurrentRow.DataBoundItem;
+			if (!mesaLocal.Reservada)
+			{ 
 			mesaSeleccionada = mesaLocal.ID;
-			reserva.reservarMesa(mesaSeleccionada);
+			FrmAltaReserva ventanaR = new FrmAltaReserva(mesaSeleccionada);
+			ventanaR.ShowDialog();
 			frmRefresh();
+			}
+			else
+			{
+				MessageBox.Show("Ésta mesa ya se encuentra reservada");
+			}
 		}
 
 		private void btnDesocupada_Click(object sender, EventArgs e)
 		{
 			mesaLocal = (Mesa)dgvReserva.CurrentRow.DataBoundItem;
+			if (mesaLocal.Reservada)
+			{ 
 			mesaSeleccionada = mesaLocal.ID;
 			reserva.habilitarMesa(mesaSeleccionada);
 			frmRefresh();
+			}
+			else
+			{
+				MessageBox.Show("Ésta mesa no se encuentra reservada");
+			}
+
 		}
 
 		private void frmRefresh()
 		{
 			dgvReserva.DataSource = reserva.listarMesas();
+		}
+
+		private void btnVer_Click(object sender, EventArgs e)
+		{
+			mesaLocal = (Mesa)dgvReserva.CurrentRow.DataBoundItem;
+			if (mesaLocal.Reservada)
+			{ 
+			mesaSeleccionada = mesaLocal.ID;
+			FrmVerReserva reserva = new FrmVerReserva(mesaSeleccionada);
+			reserva.ShowDialog();
+				frmRefresh();
+			}
+			else
+			{
+				MessageBox.Show("Ésta mesa no se encuentra reservada");
+			}
+		}
+
+		private void FrmReserva_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

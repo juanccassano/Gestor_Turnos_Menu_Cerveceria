@@ -106,6 +106,12 @@
     <Compile Include="FrmAltaProveedor.Designer.cs">
       <DependentUpon>FrmAltaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAltaReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaReserva.Designer.cs">
+      <DependentUpon>FrmAltaReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBebida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,23 +142,11 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMesa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMesa.Designer.cs">
-      <DependentUpon>FrmMesa.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmEnvio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEnvio.Designer.cs">
       <DependentUpon>FrmEnvio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmInicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmInicio.Designer.cs">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMenu.cs">
       <SubType>Form</SubType>
@@ -190,6 +184,12 @@
     <Compile Include="FrmSalon.Designer.cs">
       <DependentUpon>FrmSalon.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVerReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerReserva.Designer.cs">
+      <DependentUpon>FrmVerReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAgregarBebida.resx">
@@ -219,6 +219,9 @@
     <EmbeddedResource Include="FrmAltaProveedor.resx">
       <DependentUpon>FrmAltaProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAltaReserva.resx">
+      <DependentUpon>FrmAltaReserva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBebida.resx">
       <DependentUpon>FrmBebida.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,14 +237,8 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMesa.resx">
-      <DependentUpon>FrmMesa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmEnvio.resx">
       <DependentUpon>FrmEnvio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmInicio.resx">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
@@ -260,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSalon.resx">
       <DependentUpon>FrmSalon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerReserva.resx">
+      <DependentUpon>FrmVerReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

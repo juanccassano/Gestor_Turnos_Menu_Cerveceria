@@ -113,7 +113,64 @@ namespace Negocio
 			}
 		}
 
+		public int ultimoCliente()
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			int resultado = 0;
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select MAX(ID) From CLIENTES";
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
 
-		
+				while (lector.Read())
+				{
+					resultado = lector.GetInt32(0);
+				}
+
+				return resultado;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public void agregarIntentos(int IDCliente)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "insert into RESERVAS_FALLIDAS (IDCliente, Intentos) values";
+				comando.CommandText += "(" + IDCliente.ToString() + ",0)";
+				comando.Connection = conexion;
+				conexion.Open();
+
+				comando.ExecuteNonQuery();
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
 	}
 }

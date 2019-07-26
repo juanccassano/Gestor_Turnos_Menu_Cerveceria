@@ -119,6 +119,55 @@ namespace Negocio
 			}
 		}
 
+		public void agregarUsuario(int IDEmpleado, string usuario, string clave)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "insert into USUARIOS (ID, Usuario, Clave, Intentos, Bloqueado) values";
+				comando.CommandText += "(" + IDEmpleado.ToString() + ",'" + usuario + "','" + clave + "',0,0)";
+				comando.Connection = conexion;
+				conexion.Open();
+
+				comando.ExecuteNonQuery();
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public void modificarUsuario(int IDEmpleado, string usuario, string clave)
+		{
+			AccesoDatosManager accesoDatos = new AccesoDatosManager();
+			try
+			{
+				accesoDatos.setearConsulta("update USUARIOS Set Usuario=@Usuario, Clave=@Clave Where Id=" + IDEmpleado.ToString());
+				accesoDatos.Comando.Parameters.Clear();
+				accesoDatos.Comando.Parameters.AddWithValue("@Usuario", usuario);
+				accesoDatos.Comando.Parameters.AddWithValue("@Clave", clave);
+				accesoDatos.abrirConexion();
+				accesoDatos.ejecutarAccion();
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				accesoDatos.cerrarConexion();
+			}
+		}
+
 		public void borrarEmpleado(Empleado borrar)
 		{
 			AccesoDatosManager accesoDatos = new AccesoDatosManager();
@@ -140,6 +189,106 @@ namespace Negocio
 				accesoDatos.cerrarConexion();
 			}
 
+		}
+
+		public string buscarUsuario(int IDEmpleado)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			string usuario="Nuevo";
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select Usuario, Clave From USUARIOS where ID="+ IDEmpleado.ToString();
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					usuario = lector["Usuario"].ToString();
+				}
+
+				return usuario;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public int buscarUltimo()
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			int usuario = 0;
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select MAX(ID) From EMPLEADOS";
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					usuario = lector.GetInt32(0);
+				}
+
+				return usuario;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+
+		public string buscarClave(int IDEmpleado)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			string clave = "Nuevo";
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select Usuario, Clave From USUARIOS where ID=" + IDEmpleado.ToString();
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					clave = lector["Clave"].ToString();
+				}
+
+				return clave;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
 		}
 	}
 }

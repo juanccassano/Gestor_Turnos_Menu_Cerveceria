@@ -2,13 +2,11 @@ C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\bin\D
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\bin\Debug\PresentacionWinForm.exe
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\bin\Debug\PresentacionWinForm.pdb
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.csprojAssemblyReference.cache
-C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmInicio.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.Properties.Resources.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.csproj.GenerateResource.cache
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.csproj.CoreCompileInputs.cache
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.exe
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.pdb
-C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmMesa.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmEnvio.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmMenu.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\bin\Debug\Dominio.dll
@@ -37,3 +35,5 @@ C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\D
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAgregarPlato.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmReserva.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.frmLogin.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmVerReserva.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAltaReserva.resources

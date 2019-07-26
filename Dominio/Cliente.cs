@@ -9,10 +9,11 @@ namespace Dominio
     public class Cliente : Persona
     {
         public int IDCliente { get; set; }
+
 		public override string ToString()
         {
-            return IDCliente.ToString();
-        }
+			return Nombre + " " + Apellido;
+		}
     }
     
 }

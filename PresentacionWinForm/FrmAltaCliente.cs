@@ -81,7 +81,10 @@ namespace PresentacionWinForm
 				}
 				else
 				{
+					int ultimoCliente = 0;
 					negocio.agregarCliente(clienteLocal);
+					ultimoCliente = negocio.ultimoCliente();
+					negocio.agregarIntentos(ultimoCliente);
 				}
 
 				Close();

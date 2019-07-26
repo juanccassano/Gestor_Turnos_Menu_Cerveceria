@@ -15,6 +15,8 @@ namespace PresentacionWinForm
 	public partial class FrmEmpleado : Form
 	{
 		private Empleado empleadoLocal = null;
+		public string usuario = "Nuevo", clave = "Nuevo";
+		EmpleadoNegocio negocio = new EmpleadoNegocio();
 
 		public FrmEmpleado()
 		{
@@ -25,6 +27,8 @@ namespace PresentacionWinForm
 		{
 			InitializeComponent();
 			empleadoLocal = empleado;
+			usuario = negocio.buscarUsuario(empleadoLocal.ID);
+			clave = negocio.buscarClave(empleadoLocal.ID);
 
 		}
 
@@ -46,6 +50,8 @@ namespace PresentacionWinForm
 					dtpFechaNac.Value = empleadoLocal.FechaNac.FechaNac;
 					txtTarea.Text = empleadoLocal.Tarea;
 					dtpFechaIng.Value = empleadoLocal.FechaIngreso.FechaNac;
+					txtUsuario.Text = usuario;
+					txtClave.Text = clave;
 					
 				}
 			}
@@ -58,13 +64,12 @@ namespace PresentacionWinForm
 
 		private void btnAceptar_Click(object sender, EventArgs e)
 		{
-			EmpleadoNegocio negocio = new EmpleadoNegocio();
 
 			try
 			{
 
 				if (empleadoLocal == null)
-					empleadoLocal = new Empleado();
+				empleadoLocal = new Empleado();
 				empleadoLocal.Telefono = new Telefono();
 				empleadoLocal.Direccion = new Direccion();
 				empleadoLocal.FechaNac = new Fecha();
@@ -82,15 +87,21 @@ namespace PresentacionWinForm
 				empleadoLocal.FechaNac.FechaNac = dtpFechaNac.Value;
 				empleadoLocal.Tarea = txtTarea.Text;
 				empleadoLocal.FechaIngreso.FechaNac = dtpFechaNac.Value;
+				usuario = txtUsuario.Text;
+				clave = txtClave.Text;
 				
 
 				if (empleadoLocal.ID != 0)
 				{
 					negocio.modificarEmpleado(empleadoLocal);
+					negocio.modificarUsuario(empleadoLocal.ID, usuario, clave);
 				}
 				else
 				{
+					int ultimoAgregado = 0;
 					negocio.agregarEmpleado(empleadoLocal);
+					ultimoAgregado = negocio.buscarUltimo();
+					negocio.agregarUsuario(ultimoAgregado, usuario, clave);
 				}
 
 				Close();
