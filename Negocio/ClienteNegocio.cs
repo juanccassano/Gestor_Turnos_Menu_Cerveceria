@@ -84,6 +84,45 @@ namespace Negocio
 			}
 		}
 
+		public bool clienteExiste (string DNI)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			bool resultado = false;
+			int recuento = 0;
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select COUNT(ID) From CLIENTES where DOCUMENTO=" + DNI;
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					recuento = lector.GetInt32(0);
+				}
+
+				if (recuento > 0)
+				{
+					resultado = true;
+				}
+
+				return resultado;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
 		public void modificarCliente(Cliente modificar)
 		{
 			AccesoDatosManager accesoDatos = new AccesoDatosManager();

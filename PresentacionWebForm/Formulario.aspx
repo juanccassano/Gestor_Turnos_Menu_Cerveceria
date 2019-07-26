@@ -6,9 +6,13 @@
             var objeto = [document.getElementById("<%=txtDNI.ClientID%>"),
                 document.getElementById("<%=txtNombre.ClientID%>"),
                 document.getElementById("<%=txtApellido.ClientID%>"),
-                document.getElementById("<%=txtEmail.ClientID%>")]
+                document.getElementById("<%=txtEmail.ClientID%>"),
+                document.getElementById("<%=txtTelefono.ClientID%>"),
+                document.getElementById("<%=txtCalle.ClientID%>"),
+                document.getElementById("<%=txtNumeracion.ClientID%>"),
+                document.getElementById("<%=txtLocalidad.ClientID%>")]
             success = true;
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < 8; i++) {
                 if (!objeto[i].classList.contains("border-success")) {
                     success = false;
                 }
@@ -35,15 +39,20 @@
                 document.getElementById("<%=btnMesaSiete.ClientID%>").disabled = true;
                 document.getElementById("<%=btnMesaOcho.ClientID%>").disabled = true;
             }
-        });
+            });
+
 
         $(document).ready(function () {
             var objeto = [document.getElementById("<%=txtDNI.ClientID%>"),
                 document.getElementById("<%=txtNombre.ClientID%>"),
                 document.getElementById("<%=txtApellido.ClientID%>"),
-                document.getElementById("<%=txtEmail.ClientID%>")]
+                document.getElementById("<%=txtEmail.ClientID%>"),
+                document.getElementById("<%=txtTelefono.ClientID%>"),
+                document.getElementById("<%=txtCalle.ClientID%>"),
+                document.getElementById("<%=txtNumeracion.ClientID%>"),
+                document.getElementById("<%=txtLocalidad.ClientID%>")]
             for (var i = 0; i < 4; i++) {
-                if (objeto[i].value != "" && objeto[i].value.length >= 3) {
+                if (objeto[i].value != "" && objeto[i].value.length >= 8) {
                     objeto[i].className += " border border-success";
                 }
             }
@@ -70,7 +79,18 @@
                 objeto.className = "form-control border border-danger";
                 objeto.style.boxShadow = "0 0 0 0.2rem rgba(255, 0, 0, 0.23)";
             }
-        }
+            }
+
+
+
+                                $( document ).ready(function() {
+                $( ".numOnly" ).keypress(function(e) {
+                    var key = e.keyCode;
+                    if (key > 31 && (key < 48 || key > 57)) {
+                        e.preventDefault();
+                    }
+                });
+            });
 
 
                     $( document ).ready(function() {
@@ -97,6 +117,14 @@
             objeto.style.boxShadow = "0 0 0 0.2rem rgba(0,123,255,0)";
         }
 
+                function botonOculto() {
+            if (document.getElementById("<%=txtDNI.ClientID%>").value != "") {
+                document.getElementById("<%=btnValidar.ClientID%>").click();
+            }
+            else {
+                alert("No has ingresado ningún DNI.")
+            }
+        
 
         function validarDNI() {
             objeto = document.getElementById("<%=txtDNI.ClientID%>");
@@ -134,7 +162,10 @@
             <br />
             <div class="row">
                 <div class="col-sm-4">
-                    <asp:TextBox ID="txtDNI" runat="server" class="form-control" placeholder="XXXXXXXX" onkeyup="validarDNI()" onkeypress="return SoloNumeros(event);" MaxLength="8" onblur="javascript:sacarFoco(this.id)"></asp:TextBox>
+                    <asp:TextBox ID="txtDNI" runat="server" class="form-control numOnly" placeholder="XXXXXXXX" onkeyup="validarDNI()" MaxLength="8" onblur="javascript:sacarFoco(this.id)"></asp:TextBox>
+                                </div>
+                <div class="col-sm-1">
+                    <asp:Button ID="btnValidar" runat="server" Text="Validar" OnClick="btnHide_Click" class="btn btn-info" />
                 </div>
             </div>
             <br />
@@ -161,6 +192,52 @@
                 <asp:TextBox ID="txtEmail" runat="server" class="form-control" onKeyUp="javascript:validarEmail()" onfocus="javascript:validarEmail()" onblur="javascript:sacarFoco(this.id)" placeholder="jgomez@gmail.com"></asp:TextBox>
             </div>
         </div>
+        <br />
+                <div class="row">
+            <div class="col-sm-4">
+                <asp:Label ID="lblTelefono" runat="server" Text="Telefono"></asp:Label>
+            </div>
+            <div class="col-sm-4">
+                <asp:Label ID="lblCalle" runat="server" Text="Calle"></asp:Label>
+            </div>
+            <div class="col-sm-4">
+                <asp:Label ID="lblNumeracion" runat="server" Text="Numeracion"></asp:Label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <asp:TextBox ID="txtTelefono" runat="server" class="form-control numOnly" placeholder="45124400" onKeyUp="javascript:validarVacio(this.id)" MaxLength="12" onblur="javascript:sacarFoco(this.id)" onfocus="javascript:enFoco(this.id)"></asp:TextBox>
+            </div>
+            <div class="col-sm-4">
+                <asp:TextBox ID="txtCalle" runat="server" class="form-control txtOnly" placeholder="Cazón" onKeyUp="javascript:validarVacio(this.id)" onblur="javascript:sacarFoco(this.id)" onfocus="javascript:enFoco(this.id)"></asp:TextBox>
+            </div>
+            <div class="col-sm-4">
+                 <asp:TextBox ID="txtNumeracion" runat="server" class="form-control numOnly" placeholder="1514" onKeyUp="javascript:validarVacio(this.id)" MaxLength="6" onblur="javascript:sacarFoco(this.id)" onfocus="javascript:enFoco(this.id)"></asp:TextBox>
+              </div>
+        </div>
+        <br />
+                        <div class="row">
+            <div class="col-sm-4">
+                <asp:Label ID="lblLocalidad" runat="server" Text="Localidad"></asp:Label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <asp:TextBox ID="txtLocalidad" runat="server" class="form-control txtOnly" placeholder="Tigre" onKeyUp="javascript:validarVacio(this.id)" onblur="javascript:sacarFoco(this.id)" onfocus="javascript:enFoco(this.id)"></asp:TextBox>
+            </div>
+             </div>
+                 <br />
+                                <div class="row">
+            <div class="col-sm-4">
+                <asp:Label ID="lblFecNac" runat="server" Text="Fecha de Nacimiento"></asp:Label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <asp:Calendar ID="cldFechaNac" runat="server" SelectedDate="<%# DateTime.Today %>"></asp:Calendar>
+            </div>
+             </div>
+             
         <br />
         <br />
                 <h2>Reservá ahora! </h2>
@@ -198,6 +275,18 @@
             </div>
             </div>
            </div>
+    <br />
+                                            <div class="row">
+            <div class="col-sm-4">
+                <asp:Label ID="lblFechaReserva" runat="server" Text="Fecha de reserva"></asp:Label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <asp:Calendar ID="cldReserva" runat="server" SelectedDate="<%# DateTime.Today %>"></asp:Calendar>
+            </div>
+             </div>
+        <br />
 
 
 </asp:Content>

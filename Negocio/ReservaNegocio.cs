@@ -155,6 +155,32 @@ namespace Negocio
 			}
 		}
 
+		public void reservaWeb (int IDMesa, int IDCliente, DateTime Fecha)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			try
+			{
+				conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "insert into RESERVAS (IDMesa, IDCliente, Fecha) values";
+				comando.CommandText += "('" + IDMesa.ToString() + "', '" + IDCliente.ToString() + "', '" + Fecha.ToString() + "')";
+				comando.Connection = conexion;
+				conexion.Open();
+
+				comando.ExecuteNonQuery();
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
 
 		public string fechaReserva(int numeroMesa)
 		{
@@ -303,6 +329,131 @@ namespace Negocio
 				}
 
 				return resultado;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public int intentosTotales(int IDUsuario)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			int intentos = 0;
+			try
+			{
+				conexion.ConnectionString = "data source=DESKTOP-BKKOHQN\\SQLEXPRESS; initial catalog=CASSANO_DB; integrated security=sspi";
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select INTENTOS From RESERVAS_FALLIDAS where IDCliente=" + IDUsuario;
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					intentos = lector.GetInt32(0);
+				}
+
+				return intentos;
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				conexion.Close();
+			}
+		}
+
+		public void sumarIntento(int IDCliente, int Intentos)
+		{
+			AccesoDatosManager accesoDatos = new AccesoDatosManager();
+			try
+			{
+
+				accesoDatos.setearConsulta("update RESERVAS_FALLIDAS Set INTENTOS=@I Where IDCliente=" + IDCliente.ToString());
+				accesoDatos.Comando.Parameters.Clear();
+				accesoDatos.Comando.Parameters.AddWithValue("@I", Intentos);
+				accesoDatos.abrirConexion();
+				accesoDatos.ejecutarAccion();
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				accesoDatos.cerrarConexion();
+			}
+		}
+
+		public bool comprobarDNI(int DNI, Cliente cliente)
+		{
+			AccesoDatosManager accesoDatos = new AccesoDatosManager();
+			try
+			{
+				accesoDatos.setearConsulta("SELECT * FROM CLIENTES WHERE DOCUMENTO = " + DNI);
+				accesoDatos.abrirConexion();
+				accesoDatos.ejecutarConsulta();
+				while (accesoDatos.Lector.Read())
+				{
+					cliente.Telefono = new Telefono();
+					cliente.Direccion = new Direccion();
+					cliente.FechaNac = new Fecha();
+					cliente.IDCliente = Convert.ToInt32(accesoDatos.Lector.GetInt32(0));
+					cliente.Documento = accesoDatos.Lector.GetInt32(1);
+					cliente.Apellido = accesoDatos.Lector.GetString(2);
+					cliente.Nombre = accesoDatos.Lector.GetString(3);
+					cliente.Telefono.Numero = accesoDatos.Lector.GetInt32(4);
+					cliente.Direccion.Calle = accesoDatos.Lector.GetString(5);
+					cliente.Direccion.Numeracion = accesoDatos.Lector.GetInt32(6);
+					cliente.Direccion.Localidad = accesoDatos.Lector.GetString(7);
+					cliente.FechaNac.FechaNac = accesoDatos.Lector.GetDateTime(8);
+					return true;
+				}
+				return false;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				accesoDatos.cerrarConexion();
+			}
+		}
+
+		public int IDCliente (string DNI)
+		{
+			SqlConnection conexion = new SqlConnection();
+			SqlCommand comando = new SqlCommand();
+			SqlDataReader lector;
+			int IDCliente = 0;
+			try
+			{
+				conexion.ConnectionString = "data source=DESKTOP-BKKOHQN\\SQLEXPRESS; initial catalog=CASSANO_DB; integrated security=sspi";
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "select ID From Clientes where Documento=" + DNI;
+				comando.Connection = conexion;
+				conexion.Open();
+				lector = comando.ExecuteReader();
+
+				while (lector.Read())
+				{
+					IDCliente = lector.GetInt32(0);
+				}
+
+				return IDCliente;
 
 			}
 			catch (Exception ex)

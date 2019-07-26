@@ -12,10 +12,14 @@ namespace PresentacionWebForm
 {
 	public partial class Formulario : System.Web.UI.Page
 	{
+		ClienteNegocio neg = new ClienteNegocio();
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			btnMesaUno.Enabled = true;
 			btnMesaDos.Enabled = true;
+			cldFechaNac.SelectedDate = DateTime.Today;
+			cldReserva.SelectedDate = DateTime.Today;
 
 		}
 
@@ -67,9 +71,17 @@ namespace PresentacionWebForm
 				popUp("Lamentablemente esta mesa ya se encuentra reservada.");
 			}
 			else
-			{ 
-			mandarMail(txtEmail.Text, txtNombre.Text);
+			{
+				if (!neg.clienteExiste(txtDNI.Text))
+				{
+					altaCliente();
+				}
+				mandarMail(txtEmail.Text, txtNombre.Text);
 			negocio.reservarMesa(IDMesa);
+			
+			int IDCliente = 0;
+			IDCliente = negocio.IDCliente(txtDNI.Text);
+			negocio.reservaWeb(IDMesa, IDCliente, cldReserva.SelectedDate);
 			Response.Redirect("~/Reservada.aspx");
 			}
 		}
@@ -84,8 +96,15 @@ namespace PresentacionWebForm
 			}
 			else
 			{
+				if (!neg.clienteExiste(txtDNI.Text))
+				{
+					altaCliente();
+				}
 				mandarMail(txtEmail.Text, txtNombre.Text);
 				negocio.reservarMesa(IDMesa);
+				int IDCliente = 0;
+				IDCliente = negocio.IDCliente(txtDNI.Text);
+				negocio.reservaWeb(IDMesa, IDCliente, cldReserva.SelectedDate);
 				Response.Redirect("~/Reservada.aspx");
 			}
 		}
@@ -100,8 +119,15 @@ namespace PresentacionWebForm
 			}
 			else
 			{
+				if (!neg.clienteExiste(txtDNI.Text))
+				{
+					altaCliente();
+				}
 				mandarMail(txtEmail.Text, txtNombre.Text);
 				negocio.reservarMesa(IDMesa);
+				int IDCliente = 0;
+				IDCliente = negocio.IDCliente(txtDNI.Text);
+				negocio.reservaWeb(IDMesa, IDCliente, cldReserva.SelectedDate);
 				Response.Redirect("~/Reservada.aspx");
 			}
 		}
@@ -116,8 +142,15 @@ namespace PresentacionWebForm
 			}
 			else
 			{
+				if (!neg.clienteExiste(txtDNI.Text))
+				{
+					altaCliente();
+				}
 				mandarMail(txtEmail.Text, txtNombre.Text);
 				negocio.reservarMesa(IDMesa);
+				int IDCliente = 0;
+				IDCliente = negocio.IDCliente(txtDNI.Text);
+				negocio.reservaWeb(IDMesa, IDCliente, cldReserva.SelectedDate);
 				Response.Redirect("~/Reservada.aspx");
 			}
 		}
@@ -132,8 +165,15 @@ namespace PresentacionWebForm
 			}
 			else
 			{
+				if (!neg.clienteExiste(txtDNI.Text))
+				{
+					altaCliente();
+				}
 				mandarMail(txtEmail.Text, txtNombre.Text);
 				negocio.reservarMesa(IDMesa);
+				int IDCliente = 0;
+				IDCliente = negocio.IDCliente(txtDNI.Text);
+				negocio.reservaWeb(IDMesa, IDCliente, cldReserva.SelectedDate);
 				Response.Redirect("~/Reservada.aspx");
 			}
 		}
@@ -148,8 +188,15 @@ namespace PresentacionWebForm
 			}
 			else
 			{
+				if (!neg.clienteExiste(txtDNI.Text))
+				{
+					altaCliente();
+				}
 				mandarMail(txtEmail.Text, txtNombre.Text);
 				negocio.reservarMesa(IDMesa);
+				int IDCliente = 0;
+				IDCliente = negocio.IDCliente(txtDNI.Text);
+				negocio.reservaWeb(IDMesa, IDCliente, cldReserva.SelectedDate);
 				Response.Redirect("~/Reservada.aspx");
 			}
 		}
@@ -164,8 +211,15 @@ namespace PresentacionWebForm
 			}
 			else
 			{
+				if (!neg.clienteExiste(txtDNI.Text))
+				{
+					altaCliente();
+				}
 				mandarMail(txtEmail.Text, txtNombre.Text);
 				negocio.reservarMesa(IDMesa);
+				int IDCliente = 0;
+				IDCliente = negocio.IDCliente(txtDNI.Text);
+				negocio.reservaWeb(IDMesa, IDCliente, cldReserva.SelectedDate);
 				Response.Redirect("~/Reservada.aspx");
 			}
 		}
@@ -180,8 +234,15 @@ namespace PresentacionWebForm
 			}
 			else
 			{
+				if (!neg.clienteExiste(txtDNI.Text))
+				{
+					altaCliente();
+				}
 				mandarMail(txtEmail.Text, txtNombre.Text);
 				negocio.reservarMesa(IDMesa);
+				int IDCliente = 0;
+				IDCliente = negocio.IDCliente(txtDNI.Text);
+				negocio.reservaWeb(IDMesa, IDCliente, cldReserva.SelectedDate);
 				Response.Redirect("~/Reservada.aspx");
 			}
 		}
@@ -196,6 +257,60 @@ namespace PresentacionWebForm
 			else
 				return false;
 		}
+
+		private void cargarFormulario(Cliente cliente)
+		{
+			txtNombre.Text = cliente.Nombre;
+			txtApellido.Text = cliente.Apellido;
+			txtTelefono.Text = cliente.Telefono.Numero.ToString();
+			txtCalle.Text = cliente.Direccion.Calle;
+			txtNumeracion.Text = cliente.Direccion.Numeracion.ToString();
+			txtLocalidad.Text = cliente.Direccion.Localidad.ToString();
+			cldFechaNac.SelectedDate = cliente.FechaNac.FechaNac;
+		}
+
+		protected bool comprobarDNI()
+		{
+			ReservaNegocio negocio = new ReservaNegocio();
+			Cliente cliente = new Cliente();
+			if (negocio.comprobarDNI(Convert.ToInt32(txtDNI.Text), cliente))
+			{
+
+				cargarFormulario(cliente);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		protected void btnHide_Click(object sender, EventArgs e)
+		{
+			comprobarDNI();
+		}
+
+		protected void altaCliente()
+		{
+			Cliente cli = new Cliente();
+			cli.Telefono = new Telefono();
+			cli.Direccion = new Direccion();
+			cli.FechaNac = new Fecha();
+
+			cli.Documento = Convert.ToInt32(txtDNI.Text);
+			cli.Apellido = txtApellido.Text;
+			cli.Nombre = txtNombre.Text;
+			cli.Telefono.Numero = Convert.ToInt32(txtTelefono.Text);
+			cli.Direccion.Calle = txtCalle.Text;
+			cli.Direccion.Numeracion = Convert.ToInt32(txtNumeracion.Text);
+			cli.Direccion.Localidad = txtLocalidad.Text;
+			cli.FechaNac.FechaNac = cldFechaNac.SelectedDate;
+			neg.agregarCliente(cli);
+
+		}
+
+
+
 
 
 	}

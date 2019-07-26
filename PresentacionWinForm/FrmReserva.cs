@@ -43,10 +43,11 @@ namespace PresentacionWinForm
 		{
 			mesaLocal = (Mesa)dgvReserva.CurrentRow.DataBoundItem;
 			if (mesaLocal.Reservada)
-			{ 
-			mesaSeleccionada = mesaLocal.ID;
-			reserva.habilitarMesa(mesaSeleccionada);
-			frmRefresh();
+			{
+				mesaSeleccionada = mesaLocal.ID;
+				FrmBajaReserva ventanaB = new FrmBajaReserva(mesaSeleccionada);
+				ventanaB.ShowDialog();
+				frmRefresh();
 			}
 			else
 			{

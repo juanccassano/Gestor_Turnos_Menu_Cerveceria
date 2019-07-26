@@ -37,3 +37,4 @@ C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\D
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.frmLogin.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmVerReserva.resources
 C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmAltaReserva.resources
+C:\Users\Juan\Desktop\UTN\Programacion III\TPC_Cassano\PresentacionWinForm\obj\Debug\PresentacionWinForm.FrmBajaReserva.resources
